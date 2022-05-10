@@ -9,13 +9,19 @@ const Menu = () => {
 
   let content = (
     <div>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo
+        praesentium iure nostrum facere tempore quisquam similique, quam fuga
+        vero nam optio, obcaecati sunt repudiandae quidem, rem eius eveniet? Ex,
+        rerum.
+      </p>
       <LoadingSpinner />
     </div>
   );
 
   return (
     <div>
-      <p>Menu</p>
+      <h1>Menu</h1>
       {content}
     </div>
   );

@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
+import About from './pages/About';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 
@@ -29,8 +30,11 @@ function App() {
             <Route path="/" exact>
               <Redirect to="/home" />
             </Route>
-            <Route path="/home" exact>
+            <Route path="/home">
               <HomePage />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
             <Route path="/menu" exact>
               <Menu />
