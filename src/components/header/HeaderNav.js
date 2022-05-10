@@ -3,6 +3,7 @@ import React from 'react';
 import Logo from './Logo';
 import MainNav from '../layout/MainNav';
 import classes from './HeaderNav.module.css';
+import HeroVideo from '../layout/HeroVideo';
 
 const HeaderNav = () => {
   return (
@@ -10,6 +11,7 @@ const HeaderNav = () => {
       <Logo />
       <h2>A la Italia</h2>
       <MainNav />
+      <HeroVideo />
     </header>
   );
 };
