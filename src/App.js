@@ -1,14 +1,13 @@
 import React, { Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-import About from './pages/About';
-import Menu from './pages/Menu';
-import Contact from './pages/Contact';
+import Home from './pages/HomePage';
+import About from './pages/AboutPage';
+import MenuPage from './pages/MenuPage';
+import Contact from './pages/ContactPage';
 
 import LoadingSpinner from './components/UI/LoadingSpinner';
 import HeaderNav from './components/header/HeaderNav';
-import MenuItem from './components/menu/MenuItem';
 import Footer from './components/footer/Footer';
 
 // import logo from './logo.svg';
@@ -31,16 +30,13 @@ function App() {
               <Redirect to="/home" />
             </Route>
             <Route path="/home">
-              <HomePage />
+              <Home />
             </Route>
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/menu" exact>
-              <Menu />
-            </Route>
-            <Route path="/menu/:menuItem">
-              <MenuItem />
+            <Route path="/menu">
+              <MenuPage />
             </Route>
             <Route path="/contact">
               <Contact />

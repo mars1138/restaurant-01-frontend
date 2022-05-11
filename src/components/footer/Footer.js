@@ -1,6 +1,10 @@
+import React from 'react';
+
+import classes from './Footer.module.css';
+
 const Footer = () => {
   return (
-    <footer>
+    <footer className={classes.footer}>
       <p>FOOTER</p>
     </footer>
   );
