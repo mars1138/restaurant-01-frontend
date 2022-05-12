@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import HeroVideo from '../components/layout/HeroVideo';
-import ImageGallery from '../components/layout/ImageGallery';
 
+import image1 from '../assets/pexels-pablo-macedo-845811 (1).jpg';
+import HeroVideo from '../components/layout/HeroVideo';
+import ImageGrid from '../components/layout/ImageGrid';
 import Section from '../components/layout/Section';
 import Slideshow from '../components/layout/Slideshow';
 
@@ -15,18 +16,18 @@ const HomePage = () => {
     <div>
       <Section type="hero">
         <HeroVideo />
-        <div className="center heroHeader">
+        <div className="heroHeader">
           <h1>The Very Best Italian Cuisine</h1>
         </div>
       </Section>
 
       <Section type="description">
         <div className="container">
-          <ImageGallery>
-            <img alt="history1" />
-            <img alt="history2" />
-            <img alt="history3" />
-          </ImageGallery>
+          <ImageGrid>
+            <img src={image1} alt="history1" />
+            <img src={image1} alt="history2" />
+            <img src={image1} alt="history3" />
+          </ImageGrid>
           <h2>Our History</h2>
           <video autoPlay muted loop>
             <source

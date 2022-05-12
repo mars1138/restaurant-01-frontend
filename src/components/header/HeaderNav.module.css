@@ -14,6 +14,14 @@
 .headerControl {
   display: flex;
   align-items: center;
-  width: 60%;
+  /* width: 60%; */
   margin: 0 auto;
+}
+
+.title {
+  font-family: Italiana, Monaco, sans-serif;
+  font-size: 4rem;
+  margin: auto 2rem;
+  text-shadow: 2px 2px 4px #000000;
+  letter-spacing: 3px;
 }

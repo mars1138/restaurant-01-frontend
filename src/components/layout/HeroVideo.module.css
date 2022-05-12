@@ -1,19 +1,15 @@
 .bgVideo {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  /* height: 100%;
-  width: 100%;
-  z-index: -1; */
-  opacity: 0.75;
   overflow: hidden;
   text-align: center;
   background-color: black;
+  margin: 0;
   padding: 0;
+  height: 50vh;
+  opacity: 0.95;
 }
 
 .bgVideoContent {
-  height: 50vh;
+  opacity: 0.65;
   width: 60%;
   object-fit: cover;
   margin: 0;

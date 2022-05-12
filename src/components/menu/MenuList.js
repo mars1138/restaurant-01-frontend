@@ -16,26 +16,29 @@ const MenuList = () => {
     <Section>
       <ul>
         <li>
-          <NavLink to="/menu/menuSalads">Salads</NavLink>
+          <NavLink to="/menu/salads">Salads</NavLink>
         </li>
         <li>
-          <NavLink to="/menu/menuPasta">Pasta</NavLink>
+          <NavLink to="/menu/pasta">Pasta</NavLink>
         </li>
         <li>
-          <NavLink to="/menu/menuPizza">Pizza</NavLink>
+          <NavLink to="/menu/pizza">Pizza</NavLink>
+        </li>
+        <li>
+          <NavLink to="/menu/dessert">Dessert</NavLink>
         </li>
       </ul>
 
-      <Route path="/menu/menuSalads">
+      <Route path="/menu/salads">
         <MenuSalads />
       </Route>
-      <Route path="/menu/menuPasta" exact>
+      <Route path="/menu/pasta" exact>
         <MenuPasta />
       </Route>
-      <Route path="/menu/menuPizza" exact>
+      <Route path="/menu/pizza" exact>
         <MenuPizza />
       </Route>
-      <Route path="/menu/menuDessert" exact>
+      <Route path="/menu/dessert" exact>
         <MenuDessert />
       </Route>
     </Section>

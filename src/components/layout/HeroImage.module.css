@@ -1,0 +1,18 @@
+.bgImage {
+  opacity: 0.7;
+  overflow: hidden;
+  text-align: center;
+  /* background-color: black; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 50vh;
+  position: relative;
+}
+
+.bgImageContent {
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
+  z-index: -2;
+}

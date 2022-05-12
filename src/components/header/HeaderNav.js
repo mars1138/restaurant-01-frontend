@@ -9,7 +9,7 @@ const HeaderNav = () => {
     <header className={classes.header}>
       <div className={classes.headerControl}>
         <Logo />
-        <h2 className="title">Ristorante San Giorgio</h2>
+        <h2 className={classes.title}>Ristorante San Giorgio</h2>
         <MainNav />
       </div>
     </header>
