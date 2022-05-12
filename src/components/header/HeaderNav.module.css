@@ -1,5 +1,19 @@
 .header {
-  background-color: rgb(52, 138, 66);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background-color: rgb(10, 70, 10); */
+  background-color: transparent;
   margin: 0;
-  padding: 0;
+  padding: 2rem 4rem;
+  color: aliceblue;
+  z-index: 2;
+}
+
+.headerControl {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
 }

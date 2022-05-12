@@ -17,7 +17,7 @@ function App() {
   return (
     <React.Fragment>
       <HeaderNav />
-      <main>
+      <main className="main">
         <Suspense
           fallback={
             <div>

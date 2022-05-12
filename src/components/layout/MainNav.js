@@ -4,8 +4,8 @@ import classes from './MainNav.module.css';
 
 const MainNav = () => {
   return (
-    <div>
-      <ul>
+    <div className={classes.mainNav}>
+      <ul className={classes.navList}>
         <li>
           <NavLink activeClassName={classes.active} to="/home">
             Home

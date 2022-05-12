@@ -3,15 +3,15 @@ import React from 'react';
 import Logo from './Logo';
 import MainNav from '../layout/MainNav';
 import classes from './HeaderNav.module.css';
-import HeroVideo from '../layout/HeroVideo';
 
 const HeaderNav = () => {
   return (
     <header className={classes.header}>
-      <Logo />
-      <h2>Ristorante San Giorgio</h2>
-      <MainNav />
-      <HeroVideo />
+      <div className={classes.headerControl}>
+        <Logo />
+        <h2 className="title">Ristorante San Giorgio</h2>
+        <MainNav />
+      </div>
     </header>
   );
 };

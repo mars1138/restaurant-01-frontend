@@ -1,11 +1,22 @@
 .section {
-  padding: 1rem 2rem;
+  position: relative;
+  /* width: 60%; */
+  margin: 0 auto;
+  padding: 3rem 10rem;
 }
 
-hero {
+.hero {
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
 }
 
 .description {
+}
+
+.featured {
+  background-color: rgba(247, 235, 198, 0.253);
+  /* background-color: antiquewhite; */
 }
 
 .locations {

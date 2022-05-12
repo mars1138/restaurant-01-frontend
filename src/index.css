@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+
 *,
 *::after,
 *::before {
@@ -18,4 +21,37 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.title {
+  font-family: Italiana, Monaco, sans-serif;
+  font-size: 4rem;
+  margin: auto 2rem;
+  text-shadow: 2px 2px 4px #000000;
+  letter-spacing: 3px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heroHeader {
+  font-family: 'Oleo Script', cursive;
+  font-size: 7rem;
+  color: goldenrod;
+  width: 45%;
+  line-height: 10rem;
+  text-align: center;
+}
+
+.heroHeader h1 {
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
 }

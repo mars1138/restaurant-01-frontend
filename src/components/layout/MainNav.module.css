@@ -1,0 +1,28 @@
+.mainNav {
+  margin-left: auto;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.navList li {
+  margin: 0 1rem;
+}
+
+.navList a:link,
+.navList a:active,
+.navList a:visited {
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: x-large;
+  border: 3px solid transparent;
+  transition: all 0.2s;
+  padding: 0.5rem 0;
+}
+
+.navList a:hover,
+.navList a.active {
+  border-bottom: 3px solid antiquewhite;
+}

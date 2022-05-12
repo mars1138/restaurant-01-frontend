@@ -9,6 +9,7 @@ const Contact = () => {
 
   return (
     <div>
+      <h2>Contact Us</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga
         dolores nihil! Consequatur ratione corporis nobis deleniti tempora dolor
