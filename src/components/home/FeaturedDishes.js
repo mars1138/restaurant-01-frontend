@@ -1,11 +1,12 @@
 import React from 'react';
 
-// import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import classes from './FeaturedDishes.module.css';
 
 const FeaturedDishes = () => {
   return (
     <section className="section">
-      <div className="container container-featured">
+      <div className="container container-col">
         <div className="container-text">
           <h2>Featured Dishes</h2>
           <p>
@@ -15,14 +16,15 @@ const FeaturedDishes = () => {
             necessitatibus fugit.
           </p>
         </div>
-        <div className="container">
-          <ul>
+        <div className={classes.featured}>
+          <ul className={classes.list}>
             <li>meal 1</li>
             <li>meal 2</li>
             <li>meal 3</li>
-            <li>meal 4</li>
           </ul>
-          <div>{/* <img src={image1} alt="featured" /> */}</div>
+          <div className={classes.image}>
+            <img src={image1} alt="featured" />
+          </div>
         </div>
       </div>
     </section>

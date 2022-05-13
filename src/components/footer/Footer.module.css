@@ -1,5 +1,36 @@
 .footer {
-  background-color: rgba(197, 19, 3, 0.74);
+  /* height: 30vh; */
+  width: 100%;
+  background-color: rgb(143, 29, 19);
   margin: 0 auto;
-  padding: 0;
+  padding: 5rem 0;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  letter-spacing: 1.5px;
+}
+
+.footer * {
+  margin-bottom: 1.5rem;
+}
+
+.footer ul {
+  width: 50%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 1.25rem;
+}
+
+.footer li {
+  width: 30%;
+  text-align: center;
+}
+
+.footerIcons {
+  display: flex;
+  justify-content: center;
 }

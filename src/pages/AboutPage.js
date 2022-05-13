@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Section from '../components/layout/Section';
 import HeroImage from '../components/layout/HeroImage';
 import ImageGrid from '../components/layout/ImageGrid';
+import History from '../components/layout/History';
 
 const About = () => {
   useEffect(() => {
@@ -14,21 +15,11 @@ const About = () => {
       <Section type="hero">
         <HeroImage />
         <div className="heroHeader">
-          <h1>The Very Best Italian Cuisine</h1>
+          <h1>30 Years of Excellent Service</h1>
         </div>
       </Section>
 
-      <Section>
-        <div className="container">
-          <h2>Our History</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-            voluptatum est quam dolores vel, sit accusamus id harum facilis
-            eveniet nulla quis asperiores eius minus inventore, doloribus
-            necessitatibus fugit.
-          </p>
-        </div>
-      </Section>
+      <History />
 
       <Section type="featured">
         <div className="container">

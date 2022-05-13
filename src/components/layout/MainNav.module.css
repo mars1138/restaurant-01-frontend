@@ -14,15 +14,15 @@
 .navList a:link,
 .navList a:active,
 .navList a:visited {
-  color: rgb(255, 255, 255);
+  color: aliceblue;
   text-decoration: none;
   font-size: large;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: all 0.2s;
   padding: 0.5rem 0;
 }
 
 .navList a:hover,
 .navList a.active {
-  border-bottom: 3px solid rgb(255, 255, 255);
+  border-bottom: 2px solid aliceblue;
 }

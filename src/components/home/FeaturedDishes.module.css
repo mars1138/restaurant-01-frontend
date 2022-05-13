@@ -1,0 +1,30 @@
+.featured {
+  height: 50vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
+.list {
+  list-style-type: none;
+  width: 50%;
+  margin: 0 1.5rem;
+}
+
+.list li {
+  height: 33%;
+  border: 1px solid black;
+}
+
+.image {
+  width: 50%;
+  margin: 0 1.5rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.image img {
+  height: 100%;
+  object-fit: cover;
+}

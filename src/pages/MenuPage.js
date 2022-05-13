@@ -14,7 +14,7 @@ const MenuPage = () => {
       <Section type="hero">
         <HeroImage />
         <div className="center heroHeader">
-          <h1>The Very Best Italian Cuisine</h1>
+          <h1>Deliciosso!</h1>
         </div>
       </Section>
 

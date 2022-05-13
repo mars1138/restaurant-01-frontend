@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import HeroVideo from '../components/layout/HeroVideo';
-import History from '../components/home/History';
+import History from '../components/layout/History';
 import FeaturedDishes from '../components/home/FeaturedDishes';
 import Locations from '../components/home/Locations';
 
