@@ -2,8 +2,9 @@
   position: relative;
   /* width: 60%; */
   margin: 0 auto;
-  padding: 3rem 10rem;
+  padding: 10rem 10rem;
   display: flex;
+  background-color: rgb(247, 247, 247);
 }
 
 .hero {
@@ -17,7 +18,7 @@
 }
 
 .featured {
-  background-color: rgba(247, 235, 198, 0.253);
+  background-color: rgba(247, 235, 198, 0.411);
   /* background-color: antiquewhite; */
 }
 

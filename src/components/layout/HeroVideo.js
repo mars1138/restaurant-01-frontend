@@ -5,12 +5,17 @@ import classes from './HeroVideo.module.css';
 
 const HeroVideo = () => {
   return (
-    <div className={classes.bgVideo}>
-      <video className={classes.bgVideoContent} autoPlay muted loop>
-        <source src={video} type="video/mp4" />
-        You browser does not support video!
-      </video>
-    </div>
+    <section className="section">
+      <div className={classes.bgVideo}>
+        <video className={classes.bgVideoContent} autoPlay muted loop>
+          <source src={video} type="video/mp4" />
+          You browser does not support video!
+        </video>
+      </div>
+      <div className="heroHeader">
+        <h1>The Very Best Italian Cuisine</h1>
+      </div>
+    </section>
   );
 };
 

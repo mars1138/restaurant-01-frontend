@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import Section from '../components/layout/Section';
 import HeroImage from '../components/layout/HeroImage';
-import ImageGallery from '../components/layout/ImageGallery';
+import ImageGrid from '../components/layout/ImageGrid';
 
 const About = () => {
   useEffect(() => {
@@ -45,13 +45,13 @@ const About = () => {
 
       <Section>
         <div className="container">
-          <ImageGallery>
+          <ImageGrid>
             <img alt="gallery item 1" />
             <img alt="gallery item 2" />
             <img alt="gallery item 3" />
             <img alt="gallery item 4" />
             <img alt="gallery item 5" />
-          </ImageGallery>
+          </ImageGrid>
         </div>
       </Section>
     </div>

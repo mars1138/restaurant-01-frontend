@@ -1,12 +1,31 @@
-.home {
-    
+.grid {
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 10vw);
+
+  gap: 2rem;
+  padding: 0 1.5rem;
+  /* border: 1px solid black; */
 }
 
-.home .image1 {
+.grid img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.home1 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
 
-.home .image2 {
+.home2 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
 }
 
-.home .image3 {
+.home3 {
+  grid-row: 1 / -1;
+  grid-column: 2 / 3;
 }
