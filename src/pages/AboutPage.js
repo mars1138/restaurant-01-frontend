@@ -12,13 +12,7 @@ const About = () => {
 
   return (
     <div>
-      <Section type="hero">
-        <HeroImage />
-        <div className="heroHeader">
-          <h1>30 Years of Excellent Service</h1>
-        </div>
-      </Section>
-
+      <HeroImage />
       <History />
 
       <Section type="featured">

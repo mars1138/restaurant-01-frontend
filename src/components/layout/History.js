@@ -2,17 +2,24 @@ import React from 'react';
 import { Route, Link, useRouteMatch } from 'react-router-dom';
 
 import ImageGrid from './ImageGrid';
+import image from '../../assets/pexels-rachel-claire-4819658.jpg';
+import classes from './History.module.css';
 // import classes from './History.module.css';
 
 const History = () => {
   const match = useRouteMatch();
-  const containerClass = `container-text ${match.path === '/home' ? '' : ''}`;
+  const containerClass = `container-text ${match.path === '/about' ? '' : ''}`;
 
   return (
     <section className="section">
       <div className="container">
         <Route path="/home">
           <ImageGrid />
+        </Route>
+        <Route path="/about">
+          <div className={classes.mainImage}>
+            <img src={image} alt="about" />
+          </div>
         </Route>
         <div className={containerClass}>
           <h2>Our History</h2>

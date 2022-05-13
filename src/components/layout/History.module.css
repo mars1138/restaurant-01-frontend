@@ -1,0 +1,11 @@
+.mainImage {
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainImage img {
+  /* height: 100%; */
+  width: auto;
+  object-fit: cover;
+}

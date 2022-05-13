@@ -7,7 +7,7 @@
   background-color: transparent;
   margin: 0;
   padding: 2rem 4rem;
-  color: aliceblue;
+  color: rgb(247, 247, 247);
   z-index: 2;
 }
 
@@ -21,6 +21,7 @@
 .title {
   font-family: Italiana, Monaco, sans-serif;
   font-size: 4rem;
+  color: rgb(247, 247, 247);
   margin: auto 2rem;
   text-shadow: 2px 2px 4px #000000;
   letter-spacing: 3px;
