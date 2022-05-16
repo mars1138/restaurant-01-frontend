@@ -1,0 +1,32 @@
+.menu-nav {
+  /* width: 90%; */
+  margin: 0 auto;
+  padding: 1rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(1, 107, 1);
+  border-radius: 50px;
+}
+
+.menu-nav li {
+  margin: 1rem 5rem;
+}
+
+.menu-nav a:link,
+.menu-nav a:visited,
+.menu-nav a:active,
+.menu-nav a:hover {
+  color: rgb(32, 34, 32);
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: medium;
+  letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-nav a.active {
+  font-weight: 700;
+  border-bottom: 2px solid rgb(32, 34, 32);
+  border-bottom: 2px solid whitesmoke;
+}

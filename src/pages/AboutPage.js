@@ -1,45 +1,30 @@
-import { useEffect } from 'react';
+import React from 'react';
 
 import Section from '../components/layout/Section';
 import HeroImage from '../components/layout/HeroImage';
-import ImageGrid from '../components/layout/ImageGrid';
+import Slideshow from '../components/layout/Slideshow';
 import History from '../components/layout/History';
+import FeaturedChef from '../components/about/FeaturedChef';
 
 const About = () => {
-  useEffect(() => {
-    console.log('About');
-  }, []);
-
   return (
-    <div>
-      <HeroImage />
-      <History />
-
-      <Section type="featured">
-        <div className="container">
-          <h2>Chef Lorenzo</h2>
-          <img alt="chef portrait" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-            voluptatum est quam dolores vel, sit accusamus id harum facilis
-            eveniet nulla quis asperiores eius minus inventore, doloribus
-            necessitatibus fugit.
-          </p>
-        </div>
+    <React.Fragment>
+      <Section containerClass="container-image">
+        <HeroImage />
       </Section>
 
       <Section>
-        <div className="container">
-          <ImageGrid>
-            <img alt="gallery item 1" />
-            <img alt="gallery item 2" />
-            <img alt="gallery item 3" />
-            <img alt="gallery item 4" />
-            <img alt="gallery item 5" />
-          </ImageGrid>
-        </div>
+        <History />
       </Section>
-    </div>
+
+      <Section sectionClass="bg-awhite">
+        <FeaturedChef />
+      </Section>
+
+      <Section>
+        <Slideshow />
+      </Section>
+    </React.Fragment>
   );
 };
 

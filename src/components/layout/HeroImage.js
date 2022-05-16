@@ -5,14 +5,16 @@ import classes from './HeroImage.module.css';
 
 const HeroImage = () => {
   return (
-    <section className="section">
+    // <section className="section">
+    <React.Fragment>
       <div className={classes.bgImage}>
         <img src={image} className={classes.bgImageContent} alt="hero" />
       </div>
       <div className="center heroHeader">
         <h1>30 Years of Excellent Service</h1>
       </div>
-    </section>
+    </React.Fragment>
+    // </section>
   );
 };
 

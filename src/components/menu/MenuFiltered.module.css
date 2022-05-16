@@ -1,0 +1,19 @@
+.menu-control {
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.menu-control ul {
+  list-style-type: none;
+}
+
+.heading {
+  font-family: inherit;
+  font-size: 4rem;
+  font-weight: inherit;
+  margin: 1rem;
+  color: inherit;
+  text-shadow: none;
+
+  text-align: center;
+}

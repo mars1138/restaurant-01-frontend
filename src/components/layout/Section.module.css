@@ -2,25 +2,11 @@
   position: relative;
   /* width: 60%; */
   margin: 0 auto;
-  padding: 10rem 10rem;
   display: flex;
-  background-color: rgb(247, 247, 247);
+  /* border: 1px solid blueviolet; */
+  /* background-color: rgb(247, 247, 247); */
 }
 
-.hero {
-  /* width: 100%; */
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.description {
-}
-
-.featured {
-  background-color: rgba(247, 235, 198, 0.411);
-  /* background-color: antiquewhite; */
-}
-
-.locations {
+.bg-awhite {
+  background-color: antiquewhite;
 }

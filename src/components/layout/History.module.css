@@ -1,11 +1,13 @@
 .mainImage {
-  height: 70%;
-  width: 100%;
+  height: 75%;
+  width: 50%;
+  /* padding: 1rem; */
+  /* margin-right: 5rem; */
   overflow: hidden;
 }
 
 .mainImage img {
-  /* height: 100%; */
+  height: 100%;
   width: auto;
   object-fit: cover;
 }

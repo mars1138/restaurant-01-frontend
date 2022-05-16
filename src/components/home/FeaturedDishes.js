@@ -29,8 +29,8 @@ const FeaturedDishes = () => {
     },
   ];
 
-  const ListDishes = dishes => {
-    return dishes.map(dish => (
+  const ListDishes = (dishes) => {
+    return dishes.map((dish) => (
       <li key={dish.id}>
         <img src={dish.imgUrl} alt={dish.name} />
         <div className={classes.dishInfo}>
@@ -42,25 +42,23 @@ const FeaturedDishes = () => {
   };
 
   return (
-    <section className="section bg-awhite">
-      <div className="container container-col">
-        <div className="container-text">
-          <h2>Featured Dishes</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-            voluptatum est quam dolores vel, sit accusamus id harum facilis
-            eveniet nulla quis asperiores eius minus inventore, doloribus
-            necessitatibus fugit.
-          </p>
-        </div>
-        <div className={classes.featured}>
-          <ul className={classes.list}>{ListDishes(featuredDishes)}</ul>
-          <div className={classes.mainImage}>
-            <img src={image1} alt="featured" />
-          </div>
+    <React.Fragment>
+      <div className="container-text flex-column">
+        <h2>Featured Dishes</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
+          voluptatum est quam dolores vel, sit accusamus id harum facilis
+          eveniet nulla quis asperiores eius minus inventore, doloribus
+          necessitatibus fugit.
+        </p>
+      </div>
+      <div className={classes.featured}>
+        <ul className={classes.list}>{ListDishes(featuredDishes)}</ul>
+        <div className={classes.mainImage}>
+          <img src={image1} alt="featured" />
         </div>
       </div>
-    </section>
+    </React.Fragment>
   );
 };
 

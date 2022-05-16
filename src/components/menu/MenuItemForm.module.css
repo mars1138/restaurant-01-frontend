@@ -1,0 +1,9 @@
+.form {
+  margin: 1rem;
+  text-align: center;
+}
+
+.form button {
+  width: 7rem;
+  border: none;
+}

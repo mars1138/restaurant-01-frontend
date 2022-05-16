@@ -1,5 +1,5 @@
 .grid {
-  /* width: 40%; */
+  /* width: 47%; */
   display: grid;
   grid-template-columns: repeat(2, 12vw);
   grid-template-rows: repeat(2, 10vw);
@@ -28,4 +28,9 @@
 .home3 {
   grid-row: 1 / -1;
   grid-column: 2 / 3;
+}
+
+.about1 {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
 }
