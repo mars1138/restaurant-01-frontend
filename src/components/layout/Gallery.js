@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import LocImg from '../../assets/pexels-rachel-claire-4819658.jpg';
-import classes from './Slideshow.module.css';
+import classes from './Gallery.module.css';
 
 const homeContent = (
   <div className={classes.slideshow}>
@@ -52,7 +52,7 @@ const aboutContent = (
   </div>
 );
 
-const Slideshow = () => {
+const Gallery = () => {
   return (
     <React.Fragment>
       <Route path="/home">{homeContent}</Route>
@@ -61,4 +61,4 @@ const Slideshow = () => {
   );
 };
 
-export default Slideshow;
+export default Gallery;

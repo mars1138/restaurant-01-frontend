@@ -2,7 +2,7 @@ import React from 'react';
 
 import Section from '../components/layout/Section';
 import HeroImage from '../components/layout/HeroImage';
-import Slideshow from '../components/layout/Slideshow';
+import Gallery from '../components/layout/Gallery';
 import History from '../components/layout/History';
 import FeaturedChef from '../components/about/FeaturedChef';
 
@@ -22,7 +22,7 @@ const About = () => {
       </Section>
 
       <Section>
-        <Slideshow />
+        <Gallery />
       </Section>
     </React.Fragment>
   );

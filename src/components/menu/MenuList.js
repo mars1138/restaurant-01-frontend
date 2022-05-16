@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import MenuNav from './MenuNav';
 // import MenuSalads from './MenuSalads';
@@ -11,10 +11,10 @@ import Menu from '../test/testMenu';
 
 const menu = Menu;
 
-const pastas = menu.filter((dish) => dish.type === 'pasta');
-const pizzas = menu.filter((dish) => dish.type === 'pizza');
-const salads = menu.filter((dish) => dish.type === 'salad');
-const desserts = menu.filter((dish) => dish.type === 'dessert');
+const pastas = menu.filter(dish => dish.type === 'pasta');
+const pizzas = menu.filter(dish => dish.type === 'pizza');
+const salads = menu.filter(dish => dish.type === 'salad');
+const desserts = menu.filter(dish => dish.type === 'dessert');
 
 const MenuList = () => {
   useEffect(() => {
@@ -35,20 +35,18 @@ const MenuList = () => {
 
       <MenuNav />
 
-      {/* <Switch> */}
-        <Route path="/menu/salads">
-          <MenuFiltered dishes={salads} type="Salad" />
-        </Route>
-        <Route path="/menu/pasta" exact>
-          <MenuFiltered dishes={pastas} type="Pasta" />
-        </Route>
-        <Route path="/menu/pizza" exact>
-          <MenuFiltered dishes={pizzas} type="Pizza" />
-        </Route>
-        <Route path="/menu/dessert" exact>
-          <MenuFiltered dishes={desserts} type="Dessert" />
-        </Route>
-      {/* </Switch> */}
+      <Route path="/menu/pasta" exact>
+        <MenuFiltered dishes={pastas} type="Pasta" />
+      </Route>
+      <Route path="/menu/pizza" exact>
+        <MenuFiltered dishes={pizzas} type="Pizza" />
+      </Route>
+      <Route path="/menu/dessert" exact>
+        <MenuFiltered dishes={desserts} type="Dessert" />
+      </Route>
+      <Route path="/menu/salads">
+        <MenuFiltered dishes={salads} type="Salad" />
+      </Route>
     </React.Fragment>
   );
 };
