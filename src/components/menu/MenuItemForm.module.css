@@ -4,6 +4,7 @@
 }
 
 .form button {
+  margin-top: 1rem;
   width: 7rem;
   border: none;
 }

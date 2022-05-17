@@ -6,7 +6,10 @@ const Input = React.forwardRef((props, ref) => {
   return (
     <div className={classes.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input ref={ref} {...props.input} />
+      {props.input.type !== 'textarea' && <input ref={ref} {...props.input} />}
+      {props.input.type === 'textarea' && (
+        <textarea {...props.input} rows="5"></textarea>
+      )}
     </div>
   );
 });

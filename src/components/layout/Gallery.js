@@ -57,6 +57,7 @@ const Gallery = () => {
     <React.Fragment>
       <Route path="/home">{homeContent}</Route>
       <Route path="/about">{aboutContent}</Route>
+      <Route path="/menu">{aboutContent}</Route>
     </React.Fragment>
   );
 };

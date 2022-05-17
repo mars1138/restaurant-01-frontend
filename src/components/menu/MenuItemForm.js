@@ -4,7 +4,7 @@ import Input from '../../components/UI/Input.js';
 import classes from './MenuItemForm.module.css';
 
 const MenuItemForm = props => {
-  const [qtyIsValid, setQtyIsValid] = useState(true);
+  // const [qtyIsValid, setQtyIsValid] = useState(true);
   const qtyInputRef = useRef();
 
   const submitHandler = event => {
