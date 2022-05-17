@@ -47,7 +47,7 @@ h2 {
   margin-top: 20px;
   padding: 1.5rem;
   background-color: rgb(1, 107, 1);
-  border-radius: 50px;
+  border-radius: 20px;
   color: antiquewhite;
   font-size: 1.25rem;
   transition: all 0.2s;
@@ -148,7 +148,7 @@ h2 {
 }
 
 .bg-awhite {
-  background-color: antiquewhite;
+  background-color: rgb(250, 240, 228);
 }
 
 .hero {
@@ -163,10 +163,4 @@ h2 {
   /* position: sticky; */
   /* top: 0;
   left: 0; */
-}
-
-.stickNav {
-}
-
-.top-section {
 }

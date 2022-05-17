@@ -38,12 +38,12 @@ const homeContent = (
     </div>
   </div>
 );
-const aboutContent = (
-  <div className={classes.grid}>
-    <img src={LocImg} className={classes['img--1']} alt="restaurant misc" />
-    <img src={LocImg} className={classes['img--2']} alt="restaurant misc" />
-    <img src={LocImg} className={classes['img--3']} alt="restaurant misc" />
-    <img src={LocImg} className={classes['img--4']} alt="restaurant misc" />
+const menuContent = (
+  <div className={classes['grid-menu']}>
+    <img src={LocImg} className={classes['menu--1']} alt="restaurant misc" />
+    <img src={LocImg} className={classes['menu--2']} alt="restaurant misc" />
+    <img src={LocImg} className={classes['menu--3']} alt="restaurant misc" />
+    <img src={LocImg} className={classes['menu--4']} alt="restaurant misc" />
     <img src={LocImg} alt="restaurant misc" />
     <img src={LocImg} alt="restaurant misc" />
     <img src={LocImg} alt="restaurant misc" />
@@ -51,13 +51,24 @@ const aboutContent = (
     <img src={LocImg} alt="restaurant misc" />
   </div>
 );
+const contactContent = (
+  <div className={classes['grid-contact']}>
+    <img src={LocImg} className={classes['contact--1']} alt="restaurant misc" />
+    <img src={LocImg} className={classes['contact--2']} alt="restaurant misc" />
+    {/* <img src={LocImg} className={classes['contact--3']} alt="restaurant misc" /> */}
+    {/* <img src={LocImg} className={classes['contact--4']} alt="restaurant misc" /> */}
+    {/* <img src={LocImg} alt="restaurant misc" />
+    <img src={LocImg} alt="restaurant misc" /> */}
+  </div>
+);
 
 const Gallery = () => {
   return (
     <React.Fragment>
       <Route path="/home">{homeContent}</Route>
-      <Route path="/about">{aboutContent}</Route>
-      <Route path="/menu">{aboutContent}</Route>
+      <Route path="/about">{menuContent}</Route>
+      <Route path="/menu">{menuContent}</Route>
+      <Route path="/contact">{contactContent}</Route>
     </React.Fragment>
   );
 };

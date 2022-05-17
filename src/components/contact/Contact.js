@@ -2,13 +2,14 @@ import React from 'react';
 
 import ContactForm from './ContactForm';
 import ContactText from './ContactText';
+import classes from './Contact.module.css';
 
 const Contact = () => {
   return (
-    <React.Fragment>
+    <div className={classes.contact}>
       <ContactForm />
       <ContactText />
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -4,15 +4,15 @@ import Input from '../UI/Input';
 import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
-  const submitHandler = (event) => {
+  const submitHandler = event => {
     event.preventDefault();
     console.log('contact form submitted!');
   };
 
   return (
     <React.Fragment>
-      <div>
-        <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes['form-container']}>
+        <form className={classes['contact-form']} onSubmit={submitHandler}>
           <Input
             label="Name"
             input={{
@@ -48,7 +48,7 @@ const ContactForm = () => {
               type: 'textarea',
             }}
           />
-          
+          <button className="btn">Submit</button>
         </form>
       </div>
     </React.Fragment>

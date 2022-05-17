@@ -1,0 +1,8 @@
+.contact {
+  width: 100%;
+  color: rgb(1, 107, 1);
+  margin-top: 5rem;
+
+  display: flex;
+  justify-content: space-evenly;
+}

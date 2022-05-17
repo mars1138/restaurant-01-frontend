@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Section from '../components/layout/Section';
 import HeroImage from '../components/layout/HeroImage';
 import Contact from '../components/contact/Contact';
-import Map from '../components/contact/Map';
+import Gallery from '../components/layout/Gallery';
 
 const ContactPage = () => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const ContactPage = () => {
         <HeroImage />
       </Section>
 
-      <Section containerClass="flex-column">
+      <Section sectionClass="bg-awhite" containerClass="flex-column">
         <h2>Contact Us</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
@@ -24,14 +24,11 @@ const ContactPage = () => {
           tempora dolor ex sit. Voluptas mollitia ea ducimus explicabo
           repellendus incidunt possimus veritatis?
         </p>
-      </Section>
-
-      <Section sectionClass="bg-awhite">
         <Contact />
       </Section>
 
       <Section>
-        <Map />
+        <Gallery />
       </Section>
     </React.Fragment>
   );
