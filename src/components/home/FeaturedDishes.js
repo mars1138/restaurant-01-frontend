@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Card from '../UI/Card';
 import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
 import classes from './FeaturedDishes.module.css';
 
@@ -32,11 +33,13 @@ const FeaturedDishes = () => {
   const ListDishes = (dishes) => {
     return dishes.map((dish) => (
       <li key={dish.id}>
-        <img src={dish.imgUrl} alt={dish.name} />
-        <div className={classes.dishInfo}>
-          <h3>{dish.name}</h3>
-          <p>{dish.description}</p>
-        </div>
+        <Card>
+          <img src={dish.imgUrl} alt={dish.name} />
+          <div className={classes.dishInfo}>
+            <h3>{dish.name}</h3>
+            <p>{dish.description}</p>
+          </div>
+        </Card>
       </li>
     ));
   };

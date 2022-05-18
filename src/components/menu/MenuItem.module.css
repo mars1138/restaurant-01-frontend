@@ -1,10 +1,10 @@
 .list-item {
   height: 17rem;
   margin: 4rem 1rem;
-  box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   display: flex;
-  overflow: hidden;
+  overflow: hidden; */
 
   /* border: 1px solid black; */
 }

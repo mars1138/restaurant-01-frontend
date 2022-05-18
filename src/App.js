@@ -9,13 +9,14 @@ import Contact from './pages/ContactPage';
 import LoadingSpinner from './components/UI/LoadingSpinner';
 import HeaderNav from './components/header/HeaderNav';
 import Footer from './components/footer/Footer';
+import CartProvider from './components/store/CartProvider';
 
 // import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <React.Fragment>
+    <CartProvider>
       <HeaderNav />
       <main className="main">
         <Suspense
@@ -45,7 +46,7 @@ function App() {
         </Suspense>
       </main>
       <Footer />
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
