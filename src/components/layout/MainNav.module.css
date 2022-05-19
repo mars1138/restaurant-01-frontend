@@ -1,5 +1,8 @@
 .mainNav {
   margin-left: auto;
+  display: flex;
+  /* align-items: flex-end; */
+  /* border: 1px solid black; */
 }
 
 .navList {
@@ -8,6 +11,7 @@
 }
 
 .navList li {
+  height: 40px;
   margin: 0 1rem;
 }
 

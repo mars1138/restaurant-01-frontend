@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
+import CartIcon from '../cart/CartIcon'
 import classes from './MainNav.module.css';
 
 const MainNav = () => {
@@ -25,6 +26,9 @@ const MainNav = () => {
           <NavLink activeClassName={classes.active} to="/contact">
             Contact
           </NavLink>
+        </li>
+        <li>
+          <CartIcon/>
         </li>
       </ul>
     </div>
