@@ -13,6 +13,11 @@
 .navList li {
   height: 40px;
   margin: 0 1rem;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  /* flex-direction: column;
+  justify-content: center; */
 }
 
 .navList a:link,
