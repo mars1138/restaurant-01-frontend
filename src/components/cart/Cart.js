@@ -5,6 +5,8 @@ import CartItem from './CartItem';
 import Checkout from './Checkout';
 import CartContext from '../store/CartProvider';
 
+import classes from './Cart.module.css';
+
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,6 +31,7 @@ const Cart = (props) => {
   const submitOrderHandler = () => {
     setIsSubmitting(true);
 
+    setDidSubmit(true);
     cartCtx.clearCart();
   };
 

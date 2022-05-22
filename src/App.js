@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/HomePage';
@@ -9,15 +9,26 @@ import Contact from './pages/ContactPage';
 import LoadingSpinner from './components/UI/LoadingSpinner';
 import HeaderNav from './components/header/HeaderNav';
 import Footer from './components/footer/Footer';
+import Cart from './components/cart/Cart';
 import CartProvider from './components/store/CartProvider';
 
 // import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
     <CartProvider>
-      <HeaderNav />
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <HeaderNav onShowCart={showCartHandler} />
       <main className="main">
         <Suspense
           fallback={

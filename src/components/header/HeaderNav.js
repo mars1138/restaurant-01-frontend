@@ -5,7 +5,7 @@ import MainNav from '../layout/MainNav';
 // import HeroVideo from '../layout/HeroVideo';
 import classes from './HeaderNav.module.css';
 
-const HeaderNav = () => {
+const HeaderNav = (props) => {
   // useEffect(() => {
   //   // console.log(header);
   //   const nav = document.getElementById('stickyNav');
@@ -52,7 +52,7 @@ const HeaderNav = () => {
         <div className={classes.headerControl}>
           <Logo />
           <h2 className={classes.title}>Ristorante San Giorgio</h2>
-          <MainNav />
+          <MainNav onShowCart={props.onShowCart} />
         </div>
       </header>
     </React.Fragment>

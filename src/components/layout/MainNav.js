@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
-import CartIcon from '../cart/CartIcon'
+import HeaderCartButton from '../header/HeaderCartButton';
 import classes from './MainNav.module.css';
 
-const MainNav = () => {
+const MainNav = (props) => {
   return (
     <div className={classes.mainNav}>
       <ul className={classes.navList}>
@@ -28,7 +28,7 @@ const MainNav = () => {
           </NavLink>
         </li>
         <li>
-          <CartIcon/>
+          <HeaderCartButton onShowCart={props.onShowCart} />
         </li>
       </ul>
     </div>
