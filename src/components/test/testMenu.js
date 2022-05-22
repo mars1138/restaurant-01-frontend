@@ -19,7 +19,7 @@ const Menu = [
   },
   {
     id: 2,
-    name: 'Salad',
+    name: 'Awesome Salad',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, sit, id laudantium laborum voluptas nesciunt, corporis a explicabo nulla hic vitae voluptatem soluta nostrum minima ratione suscipit deserunt eos error?',
     price: 1.99,
@@ -37,7 +37,7 @@ const Menu = [
   },
   {
     id: 4,
-    name: 'Salad',
+    name: ' Greek Salad',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, sit, id laudantium laborum voluptas nesciunt, corporis a explicabo nulla hic vitae voluptatem soluta nostrum minima ratione suscipit deserunt eos error?',
     price: 1.99,

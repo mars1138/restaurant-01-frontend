@@ -7,6 +7,11 @@ const MenuNav = () => {
   return (
     <ul className={classes['menu-nav']}>
       <li>
+        <NavLink activeClassName={classes.active} to="/menu">
+          All
+        </NavLink>
+      </li>
+      <li>
         <NavLink activeClassName={classes.active} to="/menu/salads">
           Salads
         </NavLink>

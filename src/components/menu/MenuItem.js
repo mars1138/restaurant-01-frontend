@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import CartContext from '../store/cart-context';
 import Card from '../UI/Card';
 import MenuItemForm from './MenuItemForm';
 import classes from './MenuItem.module.css';
 
 const MenuItem = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (quantity) => {
+    console.log('qty: ', quantity);
+    console.log('props.id: ', props.id);
+    console.log('props.name: ', props.name);
+    cartCtx.addItem({
+      id: props.id,
+      name: props.name,
+      quantity: quantity,
+      price: props.price,
+    });
+  };
+
   // console.log('imgUrl: ', props.imgUrl);
 
   return (
@@ -17,7 +32,7 @@ const MenuItem = (props) => {
         </div>
         <div className={classes.form}>
           <span>${props.price}</span>
-          <MenuItemForm />
+          <MenuItemForm onAddToCart={addToCartHandler} />
         </div>
       </Card>
     </li>

@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
-import CartContext from '../store/CartProvider';
+import CartContext from '../store/cart-context';
 
 import classes from './Cart.module.css';
 
@@ -28,10 +28,14 @@ const Cart = (props) => {
     setIsCheckout(true);
   };
 
-  const submitOrderHandler = () => {
+  const submitOrderHandler = (userData) => {
     setIsSubmitting(true);
 
-    setDidSubmit(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setDidSubmit(true);
+    }, 1000);
+
     cartCtx.clearCart();
   };
 
@@ -65,6 +69,7 @@ const Cart = (props) => {
 
   const cartModalContent = (
     <React.Fragment>
+      <h2 className={classes.title}>Your Cart</h2>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
