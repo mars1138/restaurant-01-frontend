@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  position: relative;
   /* border: 1px solid black; */
 }
 
@@ -17,13 +18,17 @@
   margin-right: 0;
 }
 
+.submitting {
+  opacity: 0.4;
+}
+
 .control {
   margin-bottom: 1.5rem;
 }
 
 .control label {
   font-weight: bold;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -36,7 +41,7 @@
   border-radius: 4px;
   height: 2.5rem;
   width: 100%;
-  padding: 1rem .75rem;
+  padding: 1rem 0.75rem;
 }
 
 .control textarea {

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import useInput from '../hooks/input';
+import ErrorModal from '../UI/ErrorModal';
+import LoadingSpinner from '../UI/LoadingSpinner';
 // import Input from '../UI/Input';
 import classes from './ContactForm.module.css';
 
@@ -9,6 +11,9 @@ const isTenChars = (value) => value.trim().length === 10;
 const isValidEmail = (value) => value.trim().includes('@');
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState();
+
   const {
     enteredInput: enteredName,
     enteredInputValid: enteredNameValid,
@@ -44,11 +49,44 @@ const ContactForm = () => {
 
   formIsValid = enteredNameValid && enteredEmailValid && enteredPhoneValid;
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
     console.log('contact form submitted!');
 
     if (!formIsValid) return;
+
+    try {
+      setIsSubmitting(true);
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: enteredName,
+          email: enteredEmail,
+          phone: enteredPhone,
+          comments: enteredComments,
+        }),
+      });
+
+      const responseData = await response.json();
+      console.log(responseData);
+
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+
+      setIsSubmitting(false);
+      resetName();
+      resetEmail();
+      resetPhone();
+      resetComments();
+    } catch (err) {
+      console.log(err);
+      setIsSubmitting(false);
+      setError(err.message || 'An unknown error occurred, please try again');
+    }
 
     // props.onConfirm({
     //   name: enteredName,
@@ -57,11 +95,10 @@ const ContactForm = () => {
     //   zipCode: enteredZipCode,
     //   creditCard: enteredCC,
     // });
+  };
 
-    resetName();
-    resetEmail();
-    resetPhone();
-    resetComments();
+  const errorHandler = () => {
+    setError(null);
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -77,10 +114,19 @@ const ContactForm = () => {
     commentsInputInvalid ? classes.invalid : ''
   }`;
 
+  const buttonClasses = `${formIsValid ? 'btn' : 'btn-disabled'}`;
+  const formClasses = `${
+    isSubmitting
+      ? `${classes['contact-form']} ${classes.submitting}`
+      : `${classes['contact-form']}`
+  }`;
+
   return (
     <React.Fragment>
+      {error && <ErrorModal error={error} onClear={errorHandler} />}
       <div className={classes['form-container']}>
-        <form className={classes['contact-form']} onSubmit={submitHandler}>
+        {isSubmitting && <LoadingSpinner asOverlay />}
+        <form className={formClasses} onSubmit={submitHandler}>
           <div className={nameControlClasses}>
             <label htmlFor="name">Name</label>
             <input
@@ -123,7 +169,12 @@ const ContactForm = () => {
               value={enteredComments}
             />
           </div>
-          <button className="btn">Submit</button>
+          <button
+            className={buttonClasses}
+            disabled={formIsValid ? false : true}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </React.Fragment>
