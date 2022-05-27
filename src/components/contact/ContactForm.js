@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 
 import useInput from '../hooks/input';
-import ErrorModal from '../UI/ErrorModal';
+import InfoModal from '../UI/InfoModal';
 import LoadingSpinner from '../UI/LoadingSpinner';
 // import Input from '../UI/Input';
 import classes from './ContactForm.module.css';
 
-const isNotEmpty = (value) => value.trim() !== '';
-const isTenChars = (value) => value.trim().length === 10;
-const isValidEmail = (value) => value.trim().includes('@');
+const isNotEmpty = value => value.trim() !== '';
+const isTenChars = value => value.trim().length === 10;
+const isValidEmail = value => value.trim().includes('@');
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
   const [error, setError] = useState();
+
+  const submitMessage = 'Form submitted, we will contact you shortly!';
 
   const {
     enteredInput: enteredName,
@@ -49,7 +52,7 @@ const ContactForm = () => {
 
   formIsValid = enteredNameValid && enteredEmailValid && enteredPhoneValid;
 
-  const submitHandler = async (event) => {
+  const submitHandler = async event => {
     event.preventDefault();
     console.log('contact form submitted!');
 
@@ -78,6 +81,7 @@ const ContactForm = () => {
       }
 
       setIsSubmitting(false);
+      setDidSubmit(true);
       resetName();
       resetEmail();
       resetPhone();
@@ -87,18 +91,14 @@ const ContactForm = () => {
       setIsSubmitting(false);
       setError(err.message || 'An unknown error occurred, please try again');
     }
-
-    // props.onConfirm({
-    //   name: enteredName,
-    //   street: enteredStreet,
-    //   city: enteredCity,
-    //   zipCode: enteredZipCode,
-    //   creditCard: enteredCC,
-    // });
   };
 
   const errorHandler = () => {
     setError(null);
+  };
+
+  const resetSubmitHandler = () => {
+    setDidSubmit(false);
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -123,7 +123,14 @@ const ContactForm = () => {
 
   return (
     <React.Fragment>
-      {error && <ErrorModal error={error} onClear={errorHandler} />}
+      {error && <InfoModal error={error} onClear={errorHandler} />}
+      {didSubmit && (
+        <InfoModal
+          message={submitMessage}
+          msgHeader={'Success!'}
+          onClear={resetSubmitHandler}
+        />
+      )}
       <div className={classes['form-container']}>
         {isSubmitting && <LoadingSpinner asOverlay />}
         <form className={formClasses} onSubmit={submitHandler}>

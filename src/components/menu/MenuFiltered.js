@@ -1,12 +1,13 @@
 import React from 'react';
 
 import MenuItem from './MenuItem';
+
 import classes from './MenuFiltered.module.css';
 
-const MenuFiltered = (props) => {
+const MenuFiltered = props => {
   console.log('dishes: ', props.dishes);
 
-  const list = props.dishes.map((dish) => {
+  const list = props.dishes.map(dish => {
     return (
       <MenuItem
         key={dish.id}
