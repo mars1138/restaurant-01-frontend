@@ -5,8 +5,6 @@ import MenuItem from './MenuItem';
 import classes from './MenuFiltered.module.css';
 
 const MenuFiltered = props => {
-  console.log('dishes: ', props.dishes);
-
   const list = props.dishes.map(dish => {
     return (
       <MenuItem
@@ -19,7 +17,7 @@ const MenuFiltered = props => {
       />
     );
   });
-  console.log('list: ', list);
+  // console.log('list: ', list);
 
   return (
     <div className={classes['menu-control']}>

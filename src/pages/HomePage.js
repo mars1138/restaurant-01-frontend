@@ -6,7 +6,7 @@ import History from '../components/layout/History';
 import FeaturedDishes from '../components/home/FeaturedDishes';
 import Locations from '../components/home/Locations';
 
-const HomePage = () => {
+const HomePage = (props) => {
   useEffect(() => {
     console.log('Home');
   }, []);
@@ -22,7 +22,7 @@ const HomePage = () => {
       </Section>
 
       <Section sectionClass="bg-awhite" containerClass="flex-column">
-        <FeaturedDishes />
+        <FeaturedDishes featured={props.featured} />
       </Section>
 
       <Section>

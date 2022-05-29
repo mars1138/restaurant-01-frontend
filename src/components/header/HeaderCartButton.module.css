@@ -1,6 +1,6 @@
 .button {
   height: 100%;
-  width: 4rem;
+  width: 3rem;
   color: white;
   background: transparent;
   position: relative;
@@ -27,7 +27,7 @@
   border-radius: 100px;
   position: absolute;
   bottom: 45%;
-  right: 20%;
+  right: 10%;
   display: flex;
   justify-content: center;
   align-items: center;

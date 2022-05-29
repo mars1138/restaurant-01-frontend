@@ -4,8 +4,6 @@ import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
 import classes from './OrderOnline.module.css';
 
 const FeaturedDishes = () => {
-  console.log(image1);
-
   return (
     <React.Fragment>
       <div className="container-text flex-column">

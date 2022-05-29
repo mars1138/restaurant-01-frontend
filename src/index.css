@@ -55,6 +55,7 @@ h2 {
   transition: all 0.2s;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:link,

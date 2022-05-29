@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/HomePage';
@@ -17,6 +17,10 @@ import './App.css';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const [dishes, setDishes] = useState([]);
+  const [featuredDishes, setFeaturedDishes] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState();
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -24,6 +28,42 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
+
+  useEffect(() => {
+    // setIsLoading(true);
+
+    const sendRequest = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/menu');
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message);
+        }
+
+        const loadedDishes = [];
+
+        data.forEach((dish) => {
+          loadedDishes.push(dish);
+        });
+
+        setDishes(loadedDishes);
+
+        const pastas = loadedDishes.filter((dish) => dish.type === 'pasta');
+        const pizzas = loadedDishes.filter((dish) => dish.type === 'pizza');
+        const desserts = loadedDishes.filter((dish) => dish.type === 'dessert');
+
+        setFeaturedDishes([pastas[0], pizzas[0], desserts[0]]);
+        // setIsLoading(false);
+      } catch (err) {
+        // setError(err.message);
+        // setIsLoading(false);
+      }
+    };
+
+    sendRequest();
+  }, []);
 
   return (
     <CartProvider>
@@ -42,13 +82,13 @@ function App() {
               <Redirect to="/home" />
             </Route>
             <Route path="/home">
-              <Home />
+              <Home featured={featuredDishes} />
             </Route>
             <Route path="/about">
               <About />
             </Route>
             <Route path="/menu">
-              <MenuPage />
+              <MenuPage menu={dishes} />
             </Route>
             <Route path="/contact">
               <Contact />

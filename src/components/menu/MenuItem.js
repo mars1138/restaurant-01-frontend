@@ -20,12 +20,15 @@ const MenuItem = (props) => {
     });
   };
 
-  // console.log('imgUrl: ', props.imgUrl);
+  // console.log('imgUrl: ', props.url);
 
   return (
     <li className={classes['list-item']}>
       <Card>
-        <img src={props.url} alt={props.url} />
+        <img
+          src={`http://localhost:3000/img/menu/${props.url}`}
+          alt={props.url}
+        />
         <div className={classes.text}>
           <h3>{props.name}</h3>
           <p>{props.description}</p>

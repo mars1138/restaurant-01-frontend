@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import Modal from '../UI/Modal';
+import InfoModal from '../UI/InfoModal';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
 import CartContext from '../store/cart-context';
@@ -11,6 +12,7 @@ const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
+  const [error, setError] = useState();
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -28,15 +30,46 @@ const Cart = (props) => {
     setIsCheckout(true);
   };
 
-  const submitOrderHandler = (userData) => {
-    setIsSubmitting(true);
+  const clearErrorHandler = () => {
+    setError(false);
+  };
 
-    setTimeout(() => {
+  let orderData;
+
+  const submitOrderHandler = async (orderData) => {
+    try {
+      setIsSubmitting(true);
+      const response = await fetch('http://localhost:5000/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: orderData.name,
+          email: orderData.email,
+          phone: orderData.phone,
+          street: orderData.street,
+          city: orderData.city,
+          zipCode: orderData.zipCode,
+          creditCard: orderData.creditCard,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) throw new Error(responseData.message);
+
+      console.log('response data: ', responseData);
+      orderData = responseData;
+
       setIsSubmitting(false);
       setDidSubmit(true);
-    }, 1000);
-
-    cartCtx.clearCart();
+      // cartCtx.clearCart();
+    } catch (err) {
+      console.log(err);
+      setIsSubmitting(false);
+      setError(err.message || 'An unknown error occurred, please try again');
+    }
   };
 
   const cartItems = (
@@ -87,6 +120,7 @@ const Cart = (props) => {
   const didSubmitModalContent = (
     <React.Fragment>
       <p>Successfully sent the order!</p>
+      {orderData}
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>
           Close
@@ -97,9 +131,10 @@ const Cart = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      {!isSubmitting && !didSubmit && cartModalContent}
-      {isSubmitting && isSubmittingModalContent}
-      {!isSubmitting && didSubmit && didSubmitModalContent}
+      {!error && !isSubmitting && !didSubmit && cartModalContent}
+      {!error && isSubmitting && isSubmittingModalContent}
+      {!error && !isSubmitting && didSubmit && didSubmitModalContent}
+      {error && <InfoModal error={error} onClear={clearErrorHandler} />}
     </Modal>
   );
 };

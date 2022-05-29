@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import MenuNav from './MenuNav';
@@ -53,58 +53,16 @@ import MenuFiltered from './MenuFiltered';
 //   },
 // ];
 
-const MenuList = () => {
-  const [dishes, setDishes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+const MenuList = (props) => {
+  const pastas = props.menu.filter((dish) => dish.type === 'pasta');
+  const pizzas = props.menu.filter((dish) => dish.type === 'pizza');
+  const salads = props.menu.filter((dish) => dish.type === 'salad');
+  const desserts = props.menu.filter((dish) => dish.type === 'dessert');
 
-  useEffect(() => {
-    setIsLoading(true);
-
-    const sendRequest = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/menu');
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.message);
-        }
-
-        const loadedDishes = [];
-
-        data.forEach(dish => {
-          loadedDishes.push(dish);
-        });
-
-        setDishes(loadedDishes);
-        setIsLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setIsLoading(false);
-      }
-    };
-
-    sendRequest();
-  }, []);
-
-  const pastas = dishes.filter(dish => dish.type === 'pasta');
-  const pizzas = dishes.filter(dish => dish.type === 'pizza');
-  const salads = dishes.filter(dish => dish.type === 'salad');
-  const desserts = dishes.filter(dish => dish.type === 'dessert');
-
-  const pastaMenu = (
-    <MenuFiltered dishes={pastas} type="Pasta" loading={isLoading} />
-  );
-  const pizzaMenu = (
-    <MenuFiltered dishes={pizzas} type="Pizza" loading={isLoading} />
-  );
-  const saladMenu = (
-    <MenuFiltered dishes={salads} type="Salad" loading={isLoading} />
-  );
-  const dessertMenu = (
-    <MenuFiltered dishes={desserts} type="Dessert" loading={isLoading} />
-  );
+  const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
+  const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
+  const saladMenu = <MenuFiltered dishes={salads} type="Salad" />;
+  const dessertMenu = <MenuFiltered dishes={desserts} type="Dessert" />;
 
   return (
     <React.Fragment>
@@ -132,21 +90,20 @@ const MenuList = () => {
             {pizzaMenu}
             {dessertMenu}
           </Route>
-          <Route path="/menu/pasta" exact>
-            {pastaMenu}
+          <Route path="/menu/pasta">
+            <MenuFiltered dishes={pastas} type="Pasta" />;
           </Route>
-          <Route path="/menu/pizza" exact>
-            {pizzaMenu}
+          <Route path="/menu/pizza">
+            <MenuFiltered dishes={pizzas} type="Pizza" />;
           </Route>
-          <Route path="/menu/dessert" exact>
-            {dessertMenu}
+          <Route path="/menu/dessert">
+            <MenuFiltered dishes={desserts} type="Dessert" />;
           </Route>
-          <Route path="/menu/salads" exact>
-            {saladMenu}
+          <Route path="/menu/salads">
+            <MenuFiltered dishes={salads} type="Salad" />;
           </Route>
         </Switch>
       </Suspense>
-      )}
     </React.Fragment>
   );
 };

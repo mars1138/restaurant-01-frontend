@@ -3,6 +3,7 @@ import classes from './Checkout.module.css';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isFiveChars = (value) => value.trim().length === 5;
+const isTenChars = (value) => value.trim().length === 10;
 const isTwelveChars = (value) => value.trim().length === 12;
 
 const Checkout = (props) => {
@@ -14,6 +15,22 @@ const Checkout = (props) => {
     inputBlurHandler: nameBlurHandler,
     reset: resetName,
   } = useInput(isNotEmpty);
+  const {
+    enteredInput: enteredEmail,
+    enteredInputValid: enteredEmailValid,
+    inputInvalid: emailInputInvalid,
+    inputChangeHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmail,
+  } = useInput(isNotEmpty);
+  const {
+    enteredInput: enteredPhone,
+    enteredInputValid: enteredPhoneValid,
+    inputInvalid: phoneInputInvalid,
+    inputChangeHandler: phoneChangeHandler,
+    inputBlurHandler: phoneBlurHandler,
+    reset: resetPhone,
+  } = useInput(isTenChars);
   const {
     enteredInput: enteredStreet,
     enteredInputValid: enteredStreetValid,
@@ -51,6 +68,8 @@ const Checkout = (props) => {
 
   formIsValid =
     enteredNameValid &&
+    enteredEmailValid &&
+    enteredPhoneValid &&
     enteredStreetValid &&
     enteredCityValid &&
     enteredZipCodeValid &&
@@ -63,6 +82,8 @@ const Checkout = (props) => {
 
     props.onConfirm({
       name: enteredName,
+      email: enteredEmail,
+      phone: enteredPhone,
       street: enteredStreet,
       city: enteredCity,
       zipCode: enteredZipCode,
@@ -70,6 +91,8 @@ const Checkout = (props) => {
     });
 
     resetName();
+    resetEmail();
+    resetPhone();
     resetStreet();
     resetCity();
     resetZipCode();
@@ -78,6 +101,12 @@ const Checkout = (props) => {
 
   const nameControlClasses = `${classes.control} ${
     nameInputInvalid ? classes.invalid : ''
+  }`;
+  const emailControlClasses = `${classes.control} ${
+    emailInputInvalid ? classes.invalid : ''
+  }`;
+  const phoneControlClasses = `${classes.control} ${
+    phoneInputInvalid ? classes.invalid : ''
   }`;
   const streetControlClasses = `${classes.control} ${
     streetInputInvalid ? classes.invalid : ''
@@ -102,8 +131,33 @@ const Checkout = (props) => {
           onChange={nameChangeHandler}
           onBlur={nameBlurHandler}
           value={enteredName}
+          placeholder={nameInputInvalid ? 'Please enter a valid name' : ''}
         />
-        {nameInputInvalid && <p>Please enter a valid name!</p>}
+        {/* {nameInputInvalid && <p>Please enter a valid name!</p>} */}
+      </div>
+      <div className={emailControlClasses}>
+        <label htmlFor="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+          value={enteredEmail}
+          placeholder={emailInputInvalid ? 'Please enter a valid email' : ''}
+        />
+        {/* {emailInputInvalid && <p>Please enter a valid email!</p>} */}
+      </div>
+      <div className={phoneControlClasses}>
+        <label htmlFor="phone">Your Phone#</label>
+        <input
+          type="text"
+          id="phone"
+          onChange={phoneChangeHandler}
+          onBlur={phoneBlurHandler}
+          value={enteredPhone}
+          placeholder={phoneInputInvalid ? 'Please enter a valid phone #' : ''}
+        />
+        {/* {nameInputInvalid && <p>Please enter a valid name!</p>} */}
       </div>
       <div className={streetControlClasses}>
         <label htmlFor="street">Street</label>
@@ -113,8 +167,11 @@ const Checkout = (props) => {
           onChange={streetChangeHandler}
           onBlur={streetBlurHandler}
           value={enteredStreet}
+          placeholder={
+            streetInputInvalid ? 'Please enter a valid street address' : ''
+          }
         />
-        {streetInputInvalid && <p>Please enter a valid street !</p>}
+        {/* {streetInputInvalid && <p>Please enter a valid street !</p>} */}
       </div>
       <div className={cityControlClasses}>
         <label htmlFor="city">City</label>
@@ -124,8 +181,9 @@ const Checkout = (props) => {
           onChange={cityChangeHandler}
           onBlur={cityBlurHandler}
           value={enteredCity}
+          placeholder={cityInputInvalid ? 'Please enter a valid city' : ''}
         />
-        {cityInputInvalid && <p>Please enter a valid city !</p>}
+        {/* {cityInputInvalid && <p>Please enter a valid city !</p>} */}
       </div>
       <div className={zipControlClasses}>
         <label htmlFor="postal">Zip Code</label>
@@ -135,10 +193,13 @@ const Checkout = (props) => {
           onChange={zipCodeChangeHandler}
           onBlur={zipCodeBlurHandler}
           value={enteredZipCode}
+          placeholder={
+            zipCodeInputInvalid ? 'Please enter a valid zip code' : ''
+          }
         />
-        {zipCodeInputInvalid && (
+        {/* {zipCodeInputInvalid && (
           <p>Please enter a valid postal code (5 digits)!</p>
-        )}
+          )} */}
       </div>
       <div className={ccControlClasses}>
         <label htmlFor="postal">Credit Card</label>
@@ -148,8 +209,9 @@ const Checkout = (props) => {
           onChange={ccChangeHandler}
           onBlur={ccBlurHandler}
           value={enteredCC}
+          placeholder={ccInputInvalid ? 'Please enter a valid credit card # (12 digits)' : ''}
         />
-        {zipCodeInputInvalid && <p>Please enter a Credit Card# (12 digits)!</p>}
+        {/* {zipCodeInputInvalid && <p>Please enter a Credit Card# (12 digits)!</p>} */}
       </div>
       <div className={classes.actions}>
         <button type="button" onClick={props.onCancel}>
