@@ -1,0 +1,9 @@
+.info-header {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid green;
+  margin-bottom: 1rem;
+}
+.info {
+  font-weight: bold;
+  font-size: 12px;
+}

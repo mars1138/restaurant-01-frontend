@@ -5,6 +5,7 @@ import InfoModal from '../UI/InfoModal';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
 import CartContext from '../store/cart-context';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
 import classes from './Cart.module.css';
 
@@ -115,7 +116,14 @@ const Cart = (props) => {
     </React.Fragment>
   );
 
-  const isSubmittingModalContent = <p>Sending order data...</p>;
+  const isSubmittingModalContent = (
+    <div>
+      <p>Sending order data...</p>
+
+        <LoadingSpinner />
+      {/* <img src={sendingIcon} /> */}
+    </div>
+  );
 
   const didSubmitModalContent = (
     <React.Fragment>

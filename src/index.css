@@ -61,7 +61,7 @@ h2 {
 .btn:link,
 .btn:visited,
 .btn:hover,
-.btn:active, {
+.btn:active {
   text-decoration: none;
 }
 
@@ -76,7 +76,10 @@ h2 {
 }
 
 .btn-error {
+  font-size: 1.25rem;
+  padding: 1.25rem;
   border-color: rgb(1, 107, 1);
+  border-radius: 14px;
   border: none;
 }
 
