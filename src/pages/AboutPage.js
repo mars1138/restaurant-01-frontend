@@ -9,9 +9,9 @@ import FeaturedChef from '../components/about/FeaturedChef';
 const About = () => {
   return (
     <React.Fragment>
-      <Section containerClass="container-image">
+      {/* <Section containerClass="container-image">
         <HeroImage />
-      </Section>
+      </Section> */}
 
       <Section>
         <History />

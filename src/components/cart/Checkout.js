@@ -209,15 +209,19 @@ const Checkout = (props) => {
           onChange={ccChangeHandler}
           onBlur={ccBlurHandler}
           value={enteredCC}
-          placeholder={ccInputInvalid ? 'Please enter a valid credit card # (12 digits)' : ''}
+          placeholder={
+            ccInputInvalid
+              ? 'Please enter a valid credit card # (12 digits)'
+              : ''
+          }
         />
         {/* {zipCodeInputInvalid && <p>Please enter a Credit Card# (12 digits)!</p>} */}
       </div>
       <div className={classes.actions}>
-        <button type="button" onClick={props.onCancel}>
+        <button className="btn-alt" onClick={props.onCancel}>
           Cancel
         </button>
-        <button className={classes.submit} disabled={!formIsValid}>
+        <button className="btn" disabled={!formIsValid}>
           Confirm
         </button>
       </div>

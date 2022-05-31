@@ -13,9 +13,9 @@ const HomePage = (props) => {
 
   return (
     <React.Fragment>
-      <Section containerClass="container-video">
+      {/* <Section containerClass="container-video">
         <HeroVideo />
-      </Section>
+      </Section> */}
 
       <Section>
         <History />

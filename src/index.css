@@ -2,8 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
 
 :root {
+  /* --heading1: rgb(252, 207, 95);
+  --heading2: rgb(252, 207, 95); */
+
+  /* --button-main: rgb(1, 107, 1);
+  --button-main-hover: rgb(0, 139, 0); */
+
   --button-main: rgb(74, 143, 77);
   --button-main-hover: rgb(105, 172, 106);
+  --button-main-text: rgb(243, 243, 243);
 
   --bottom-border: rgb(74, 143, 77);
 }
@@ -46,7 +53,7 @@ code {
 h1,
 h2 {
   font-family: 'Oleo Script', cursive;
-  color: rgb(39, 39, 39);
+  /* color: rgb(39, 39, 39); */
   /* text-shadow: 1px 1px 2px #000000; */
 }
 
@@ -54,9 +61,24 @@ h2 {
   font-size: 5rem;
 } */
 
+button {
+  border: none;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-width: 0px;
+  outline: none;
+  cursor: not-allowed;
+}
+
 .btn,
 .btn-disabled,
-.btn-error {
+.btn-error,
+.btn-alt {
   width: 22%;
   margin-top: 20px;
   padding: 1rem;
@@ -81,7 +103,7 @@ h2 {
 .btn:hover,
 .btn-error:hover {
   /* background-color:rgb(252, 194, 47); */
-  background-color:var(--button-main-hover);
+  background-color: var(--button-main-hover);
 }
 
 .btn-disabled {
@@ -89,13 +111,23 @@ h2 {
   cursor: not-allowed;
 }
 
-.btn-error {
+/* .btn-error {
   font-size: 1.25rem;
-  padding: 1.25rem;
-  /* border-color: rgb(1, 107, 1); */
+  padding: 1rem;
+  border-color: rgb(1, 107, 1);
   border-color: var(--button-main);
-  border-radius: 14px;
+  border-radius: 15px;
   border: none;
+} */
+
+.btn-alt {
+  color: var(--button-main);
+  background-color: transparent;
+}
+
+.btn-alt:hover {
+  color: white;
+  background-color: rgb(245, 205, 106);
 }
 
 .center {
@@ -124,7 +156,7 @@ h2 {
 }
 
 .container {
-  width: 960px;
+  width: 900px;
   margin: 0 auto;
   padding: 8rem 2rem 12rem 2rem;
   display: flex;

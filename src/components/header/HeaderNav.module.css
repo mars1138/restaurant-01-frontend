@@ -1,4 +1,7 @@
 .header {
+}
+
+.headerControl {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,9 +12,7 @@
   padding: 2rem 4rem;
   color: rgb(247, 247, 247);
   z-index: 2;
-}
-
-.headerControl {
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   /* width: 60%; */
