@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Card from '../UI/Card';
-import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import image1 from '../../assets/pexels-hiral-chavda-8545576.jpg';
 import classes from './FeaturedDishes.module.css';
 
 const FeaturedDishes = (props) => {

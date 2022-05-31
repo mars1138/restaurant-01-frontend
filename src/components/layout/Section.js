@@ -4,7 +4,7 @@ import classes from './Section.module.css';
 
 const Section = (props) => {
   const sectionClasses = `${classes.section} ${
-    props.sectionClass ? classes[props.sectionClass] : ''
+    props.sectionClass ? props.sectionClass : ''
   }`;
   const containerClasses = `container ${
     props.containerClass ? props.containerClass : ''

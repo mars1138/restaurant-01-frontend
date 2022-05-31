@@ -13,15 +13,15 @@ const MenuPage = (props) => {
         <HeroImage />
       </Section>
 
-      <Section sectionClass="bg-awhite">
+      <Section>
         <OrderOnline />
       </Section>
 
-      <Section containerClass="flex-column">
+      <Section sectionClass="bg-awhite" containerClass="flex-column">
         <MenuList menu={props.menu} />
       </Section>
 
-      <Section sectionClass="bg-awhite">
+      <Section>
         <Gallery />
       </Section>
     </React.Fragment>

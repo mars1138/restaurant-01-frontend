@@ -1,12 +1,12 @@
 .menu-nav {
-  width: 70%;
+  width: 78%;
   margin: 0 auto;
   padding: 1rem;
   list-style-type: none;
   display: flex;
   justify-content: center;
-  background-color: rgb(1, 107, 1);
-  border-radius: 50px;
+  background-color:var(--button-main);
+  border-radius: 5px;
 }
 
 .menu-nav li {
@@ -16,8 +16,7 @@
 
 .menu-nav a:link,
 .menu-nav a:visited,
-.menu-nav a:active,
-.menu-nav a:hover {
+.menu-nav a:active {
   color: rgb(32, 34, 32);
   color: whitesmoke;
   text-decoration: none;
@@ -26,9 +25,10 @@
   border-bottom: 2px solid transparent;
 }
 
+.menu-nav a:hover,
 .menu-nav a.active {
   font-weight: 700;
-  border-bottom: 2px solid rgb(32, 34, 32);
+  /* border-bottom: 2px solid rgb(32, 34, 32); */
   border-bottom: 2px solid whitesmoke;
 }
 

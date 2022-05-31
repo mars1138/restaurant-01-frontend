@@ -1,6 +1,6 @@
 import React from 'react';
 
-import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import image1 from '../../assets/pexels-tirachard-kumtanom-887827 (1).jpg';
 import classes from './FeaturedChef.module.css';
 
 const FeaturedDishes = () => {
