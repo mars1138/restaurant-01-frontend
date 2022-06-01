@@ -1,6 +1,6 @@
 import React from 'react';
 
-import image from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import image from '../../assets/pexels-narda-yescas-1566837.jpg';
 import classes from './HeroImage.module.css';
 
 const HeroImage = () => {

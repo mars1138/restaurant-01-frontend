@@ -1,3 +1,10 @@
+.slide img,
+.grid-about img,
+.grid-menu img,
+.grid-contact img {
+  box-shadow: var(--img-shadow);
+}
+
 .slideshow {
   /* height: 35vh; */
   width: 100%;
@@ -48,8 +55,8 @@
 
 .grid-about {
   display: grid;
-  grid-template-columns: repeat(5, 12vw);
-  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(3, 150px);
   gap: 2rem;
   /* padding: 0 1.5rem; */
 }
@@ -83,8 +90,8 @@
 
 .grid-menu {
   display: grid;
-  grid-template-columns: repeat(5, 12vw);
-  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(3, 150px);
   gap: 2rem;
   /* padding: 0 1.5rem; */
 }
@@ -117,8 +124,8 @@
 /*============================================*/
 .grid-contact {
   display: grid;
-  grid-template-columns: repeat(4, 12vw);
-  grid-template-rows: repeat(2, 10vw);
+  grid-template-columns: repeat(4, 175px);
+  grid-template-rows: repeat(2, 150px);
   gap: 2rem;
   /* padding: 0 1.5rem; */
 }

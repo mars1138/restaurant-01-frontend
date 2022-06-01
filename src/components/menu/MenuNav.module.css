@@ -27,7 +27,7 @@
 
 .menu-nav a:hover,
 .menu-nav a.active {
-  font-weight: 700;
+  /* font-weight: 700; */
   /* border-bottom: 2px solid rgb(32, 34, 32); */
   border-bottom: 2px solid whitesmoke;
 }

@@ -1,5 +1,5 @@
 .list-item {
-  height: 17rem;
+  height: 15rem;
   margin: 4rem 1rem;
   /* box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
@@ -10,7 +10,7 @@
 }
 
 .list-item img {
-  width: 25rem;
+  width: 20rem;
   object-fit: cover;
   /* border-top-left-radius: 2px;
   border-bottom-left-radius: 2px; */
@@ -24,6 +24,9 @@
 .text h3 {
   font-size: large;
   font-weight: 500;
+}
+.text p {
+  font-size: 1.35rem;
 }
 
 .form {

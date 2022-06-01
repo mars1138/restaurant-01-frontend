@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 import Section from '../components/layout/Section';
-import HeroImage from '../components/layout/HeroImage';
 import Contact from '../components/contact/Contact';
 import Gallery from '../components/layout/Gallery';
 
@@ -12,10 +11,6 @@ const ContactPage = () => {
 
   return (
     <React.Fragment>
-      <Section containerClass="container-image">
-        <HeroImage />
-      </Section>
-
       <Section sectionClass="bg-awhite" containerClass="flex-column">
         <h2>Contact Us</h2>
         <p>

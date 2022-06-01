@@ -4,16 +4,15 @@ import Logo from './Logo';
 import MainNav from '../layout/MainNav';
 // import HeroVideo from '../layout/HeroVideo';
 import classes from './HeaderNav.module.css';
-import { Route } from 'react-router-dom';
-import HeroVideo from '../layout/HeroVideo';
-import HeroImage from '../layout/HeroImage';
+// import { Route } from 'react-router-dom';
+// import HeroVideo from '../layout/HeroVideo';
+// import HeroImage from '../layout/HeroImage';
 import Hero from '../layout/Hero';
 
 const HeaderNav = (props) => {
   useEffect(() => {
-    // console.log(header);
     const nav = document.getElementById('stickyNav');
-    // const navHeight = nav.getBoundingClientRect().height;
+    const navHeight = nav.getBoundingClientRect().height;
     const target = nav.parentElement.childNodes[1];
 
     const stickyNav = function (entries) {
@@ -26,7 +25,7 @@ const HeaderNav = (props) => {
     const headerObserver = new IntersectionObserver(stickyNav, {
       root: null,
       threshold: 0.1,
-      // rootMargin: `${navHeight}px`,
+      rootMargin: `-${navHeight}px`,
     });
 
     headerObserver.observe(target);

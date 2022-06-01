@@ -13,6 +13,8 @@
   --button-main-text: rgb(243, 243, 243);
 
   --bottom-border: rgb(74, 143, 77);
+
+  --img-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 *,
@@ -79,7 +81,7 @@ button:disabled:active {
 .btn-disabled,
 .btn-error,
 .btn-alt {
-  width: 22%;
+  width: 23%;
   margin-top: 20px;
   padding: 1rem;
   background-color: var(--button-main);
