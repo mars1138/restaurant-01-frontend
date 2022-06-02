@@ -67,7 +67,7 @@ const MenuList = (props) => {
   return (
     <React.Fragment>
       <div className="container-text flex-column">
-        <h2>Menu</h2>
+        <h2>Online Menu</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
           voluptatum est quam dolores vel, sit accusamus id harum facilis

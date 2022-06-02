@@ -1,5 +1,5 @@
 .featured {
-  height: 50vh;
+  height: 40vh;
   width: 47%;
   margin: 0 auto;
   display: flex;
@@ -19,5 +19,5 @@
 .mainImage img {
   height: 100%;
   object-fit: cover;
-  transform: translateX(-20%);
+  transform: translateX(-35%);
 }

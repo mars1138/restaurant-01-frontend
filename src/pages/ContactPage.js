@@ -12,6 +12,8 @@ const ContactPage = () => {
   return (
     <React.Fragment>
       <Section sectionClass="bg-awhite" containerClass="flex-column">
+        <div className="container-text flex-column">
+
         <h2>Contact Us</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
@@ -19,6 +21,7 @@ const ContactPage = () => {
           tempora dolor ex sit. Voluptas mollitia ea ducimus explicabo
           repellendus incidunt possimus veritatis?
         </p>
+        </div>
         <Contact />
       </Section>
 

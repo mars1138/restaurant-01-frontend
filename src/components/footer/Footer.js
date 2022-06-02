@@ -1,10 +1,15 @@
 import React from 'react';
 
+// import Logo from '../header/Logo';
 import classes from './Footer.module.css';
 
 const Footer = () => {
   return (
     <footer className={classes.footer}>
+      {/* <div className={classes.title}> */}
+      <span className={classes.title}>Ristorante San Giorgio</span>
+      {/* <Logo /> */}
+      {/* </div> */}
       <ul>
         <li>
           <span>

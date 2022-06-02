@@ -1,12 +1,12 @@
 import React from 'react';
 
-import image1 from '../../assets/pexels-pablo-macedo-845811 (1).jpg';
+import image1 from '../../assets/menu/pexels-darya-sheydel-10456297.jpg';
 import classes from './OrderOnline.module.css';
 
 const FeaturedDishes = () => {
   return (
     <React.Fragment>
-      <div className="container-text flex-column">
+      <div className="container-text container-text-50 flex-column">
         <h2>Order Online</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque

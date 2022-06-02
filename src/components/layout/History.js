@@ -6,10 +6,10 @@ import ImageGrid from './ImageGrid';
 const History = () => {
   return (
     <React.Fragment>
-      <div className="container-text">
+      <div className="container-text container-text-50">
         <ImageGrid />
       </div>
-      <div className="container-text flex-column">
+      <div className="container-text container-text-50 flex-column">
         <h2>Our History</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque

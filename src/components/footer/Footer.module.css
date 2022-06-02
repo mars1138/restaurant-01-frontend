@@ -16,6 +16,16 @@
   margin-bottom: 1.5rem;
 }
 
+.title {
+  font-size: 2rem;
+  height: 4rem;
+  /* width: 17%; */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black; */
+}
+
 .footer ul {
   width: 50%;
   /* border: 1px solid black; */

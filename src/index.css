@@ -160,7 +160,7 @@ button:disabled:active {
 .container {
   width: 900px;
   margin: 0 auto;
-  padding: 8rem 2rem 12rem 2rem;
+  padding: 8rem 2rem 10rem 2rem;
   display: flex;
   justify-content: center;
   /* border: 1px solid black; */
@@ -179,7 +179,7 @@ button:disabled:active {
   padding: 0 1.5rem;
   /* height: 50vh; */
   /* width: 47%; */
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   /* justify-content: center; */
 }
@@ -201,8 +201,8 @@ button:disabled:active {
   justify-content: flex-start;
 }
 
-.container-text-60 {
-  width: 60%;
+.container-text-50 {
+  width: 50%;
 }
 
 .section {

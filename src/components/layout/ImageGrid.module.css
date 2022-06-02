@@ -1,11 +1,11 @@
 .grid {
-  /* width: 47%; */
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 12vw);
-  grid-template-rows: repeat(2, 10vw);
+  grid-template-columns: repeat(2, 45%);
+  grid-template-rows: repeat(2, 45%);
 
   gap: 2rem;
-  padding: 0 1.5rem;
+  /* padding: 0 1.5rem; */
   /* border: 1px solid black; */
 }
 
