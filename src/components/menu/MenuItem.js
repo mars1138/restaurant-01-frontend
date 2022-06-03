@@ -5,10 +5,10 @@ import Card from '../UI/Card';
 import MenuItemForm from './MenuItemForm';
 import classes from './MenuItem.module.css';
 
-const MenuItem = (props) => {
+const MenuItem = props => {
   const cartCtx = useContext(CartContext);
 
-  const addToCartHandler = (quantity) => {
+  const addToCartHandler = quantity => {
     console.log('qty: ', quantity);
     console.log('props.id: ', props.id);
     console.log('props.name: ', props.name);
@@ -19,8 +19,6 @@ const MenuItem = (props) => {
       price: props.price,
     });
   };
-
-  // console.log('imgUrl: ', props.url);
 
   return (
     <li className={classes['list-item']}>

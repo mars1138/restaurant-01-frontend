@@ -2,14 +2,10 @@ import React, { useEffect } from 'react';
 
 import Logo from './Logo';
 import MainNav from '../layout/MainNav';
-// import HeroVideo from '../layout/HeroVideo';
 import classes from './HeaderNav.module.css';
-// import { Route } from 'react-router-dom';
-// import HeroVideo from '../layout/HeroVideo';
-// import HeroImage from '../layout/HeroImage';
 import Hero from '../layout/Hero';
 
-const HeaderNav = (props) => {
+const HeaderNav = props => {
   useEffect(() => {
     const nav = document.getElementById('stickyNav');
     const navHeight = nav.getBoundingClientRect().height;
@@ -30,23 +26,6 @@ const HeaderNav = (props) => {
 
     headerObserver.observe(target);
   }, []);
-
-  // useEffect(() => {
-  //   const nav = document.getElementById('stickyNav');
-  //   const navHeight = nav.getBoundingClientRect().height;
-  //   // console.log(nav);
-  //   const target = nav.parentElement.childNodes[1];
-  //   console.log('traget: ', target);
-  //   const initialCoords = target.getBoundingClientRect();
-  //   // console.log('Sticky Nav initial coords: ', initialCoords);
-  //   // scroll event is not efficient, and usually should be avoided
-  //   window.addEventListener('scroll', function () {
-  //     console.log(window.scrollY);
-  //     if (window.scrollY > initialCoords.bottom - navHeight)
-  //       nav.classList.add('sticky');
-  //     else nav.classList.remove('sticky');
-  //   });
-  // }, []);
 
   const headerClasses = `${classes.header}`;
 

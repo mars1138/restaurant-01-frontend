@@ -1,12 +1,5 @@
-.map {
-  /* height: 100px; */
-  /* width: 100%; */
-}
-
 .map iframe {
   height: 350px !important;
-  /* height: 100%; */
   width: 100%;
   box-shadow: 0px 8px 8px 5px rgba(173, 173, 173, 0.2);
-
 }

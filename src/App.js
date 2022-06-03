@@ -12,15 +12,12 @@ import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
 import CartProvider from './components/store/CartProvider';
 
-// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [dishes, setDishes] = useState([]);
   const [featuredDishes, setFeaturedDishes] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState();
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -30,8 +27,6 @@ function App() {
   };
 
   useEffect(() => {
-    // setIsLoading(true);
-
     const sendRequest = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/menu');
@@ -44,21 +39,19 @@ function App() {
 
         const loadedDishes = [];
 
-        data.forEach((dish) => {
+        data.forEach(dish => {
           loadedDishes.push(dish);
         });
 
         setDishes(loadedDishes);
 
-        const pastas = loadedDishes.filter((dish) => dish.type === 'pasta');
-        const pizzas = loadedDishes.filter((dish) => dish.type === 'pizza');
-        const desserts = loadedDishes.filter((dish) => dish.type === 'dessert');
+        const pastas = loadedDishes.filter(dish => dish.type === 'pasta');
+        const pizzas = loadedDishes.filter(dish => dish.type === 'pizza');
+        const desserts = loadedDishes.filter(dish => dish.type === 'dessert');
 
         setFeaturedDishes([pastas[0], pizzas[0], desserts[0]]);
-        // setIsLoading(false);
       } catch (err) {
-        // setError(err.message);
-        // setIsLoading(false);
+        console.log(err);
       }
     };
 

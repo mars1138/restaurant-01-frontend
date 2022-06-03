@@ -17,7 +17,6 @@ const MenuFiltered = props => {
       />
     );
   });
-  // console.log('list: ', list);
 
   return (
     <div className={classes['menu-control']}>

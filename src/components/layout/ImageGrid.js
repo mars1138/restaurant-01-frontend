@@ -11,7 +11,6 @@ import classes from './ImageGrid.module.css';
 
 const ImageGrid = () => {
   return (
-    // <React.Fragment>
     <div className={classes.grid}>
       <Route path="/about">
         <div className={classes.about1}>
@@ -30,7 +29,6 @@ const ImageGrid = () => {
         </div>
       </Route>
     </div>
-    // </React.Fragment>
   );
 };
 

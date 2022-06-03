@@ -8,16 +8,15 @@ import classes from './HeroImage.module.css';
 
 const HeroImage = () => {
   return (
-    // <section className="section">
     <React.Fragment>
       <div className={classes.bgImage}>
-        <Route path='/about'>
+        <Route path="/about">
           <img src={image1} className={classes.bgImageContent} alt="hero" />
         </Route>
-        <Route path='/menu'>
+        <Route path="/menu">
           <img src={image2} className={classes.bgImageContent} alt="hero" />
         </Route>
-        <Route path='/contact'>
+        <Route path="/contact">
           <img src={image3} className={classes.bgImageContent} alt="hero" />
         </Route>
       </div>
@@ -25,7 +24,6 @@ const HeroImage = () => {
         <h1>30 Years of Excellent Service</h1>
       </div>
     </React.Fragment>
-    // </section>
   );
 };
 

@@ -2,9 +2,8 @@ import React from 'react';
 
 import Modal from './Modal';
 import classes from './InfoModal.module.css';
-// import Button from '../FormElements/Button';
 
-const InfoModal = (props) => {
+const InfoModal = props => {
   return (
     <Modal onClose={props.onClear}>
       <h1 className={classes['info-header']}>

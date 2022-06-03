@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-bottom: 2px solid rgb(1, 107, 1); */
   border-bottom: 2px solid var(--bottom-border);
   padding: 1rem 0 2rem 0;
   margin: 1rem 0;

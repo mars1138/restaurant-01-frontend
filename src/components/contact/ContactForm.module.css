@@ -5,15 +5,12 @@
   justify-content: space-between;
   align-items: stretch;
   position: relative;
-  /* border: 1px solid black; */
 }
 
 .contact-form button {
   color: whitesmoke;
   border: none;
-  /* border: 1px solid black; */
   flex: 0;
-  /* align-self: flex-end; */
   margin-left: 77%;
   margin-right: 0;
 }

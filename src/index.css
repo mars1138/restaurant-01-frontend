@@ -55,13 +55,7 @@ code {
 h1,
 h2 {
   font-family: 'Oleo Script', cursive;
-  /* color: rgb(39, 39, 39); */
-  /* text-shadow: 1px 1px 2px #000000; */
 }
-
-/* h2 {
-  font-size: 5rem;
-} */
 
 button {
   border: none;
@@ -104,7 +98,6 @@ button:disabled:active {
 
 .btn:hover,
 .btn-error:hover {
-  /* background-color:rgb(252, 194, 47); */
   background-color: var(--button-main-hover);
 }
 
@@ -112,15 +105,6 @@ button:disabled:active {
   background-color: rgb(170, 170, 170);
   cursor: not-allowed;
 }
-
-/* .btn-error {
-  font-size: 1.25rem;
-  padding: 1rem;
-  border-color: rgb(1, 107, 1);
-  border-color: var(--button-main);
-  border-radius: 15px;
-  border: none;
-} */
 
 .btn-alt {
   color: var(--button-main);
@@ -151,7 +135,6 @@ button:disabled:active {
 }
 
 .heroHeader h1 {
-  /* font-family: 'Oleo Script', cursive; */
   font-size: 7rem;
   color: rgb(252, 207, 95);
   text-shadow: 2px 2px 4px #000000;
@@ -163,7 +146,6 @@ button:disabled:active {
   padding: 8rem 2rem 10rem 2rem;
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
 .container p {
@@ -171,17 +153,10 @@ button:disabled:active {
   margin-bottom: 3rem;
 }
 
-/* .container p:last-of-type {
-  margin-bottom: 6rem;
-} */
-
 .container-text {
   padding: 0 1.5rem;
-  /* height: 50vh; */
-  /* width: 47%; */
   margin: 0;
   display: flex;
-  /* justify-content: center; */
 }
 
 .container-video,
@@ -207,11 +182,8 @@ button:disabled:active {
 
 .section {
   position: relative;
-  /* width: 60%; */
   margin: 0 auto;
   display: flex;
-  /* border: 1px solid blueviolet; */
-  /* background-color: rgb(247, 247, 247); */
 }
 
 .bg-awhite {
@@ -219,7 +191,6 @@ button:disabled:active {
 }
 
 .hero {
-  /* width: 100%; */
   margin: 0;
   padding: 0;
   display: block;
@@ -227,7 +198,4 @@ button:disabled:active {
 
 .sticky {
   background-color: #202020e0;
-  /* position: sticky; */
-  /* top: 0;
-  left: 0; */
 }

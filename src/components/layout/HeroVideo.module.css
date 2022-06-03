@@ -3,19 +3,16 @@
   text-align: center;
   background-color: black;
   margin: 0;
-  /* margin-bottom: 5rem; */
   padding: 0;
   height: 50vh;
   width: 100%;
   opacity: 0.95;
-  /* border: 1px solid black; */
 }
 
 .bgVideoContent {
   opacity: 0.65;
   height: 100%;
   width: 70%;
-  /* height: 100%; */
   object-fit: cover;
   margin: 0;
 }

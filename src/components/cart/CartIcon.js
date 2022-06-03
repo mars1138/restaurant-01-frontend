@@ -1,9 +1,4 @@
-// import icon from '../../assets/icons8-shopping-cart-96.png';
-// import classes from './CartIcon.module.css';
-
 const CartIcon = () => {
-  // return <img className={classes.icon} src={icon} alt="cart" />;
-
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

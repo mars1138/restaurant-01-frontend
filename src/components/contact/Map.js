@@ -25,7 +25,6 @@ const Map = () => {
             type="text/javascript"
             src="https://embedmaps.com/google-maps-authorization/script.js?id=5a33be79e53caf0a07dfec499abf84b7b481f165"
           ></script>
-          {/* <Map center={props.coordinates} zoom={16} /> */}
         </div>
     </div>
   );

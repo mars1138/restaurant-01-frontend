@@ -1,19 +1,11 @@
 .list-item {
   height: 15rem;
   margin: 4rem 1rem;
-  /* box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  display: flex;
-  overflow: hidden; */
-
-  /* border: 1px solid black; */
 }
 
 .list-item img {
   width: 20rem;
   object-fit: cover;
-  /* border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px; */
 }
 
 .text {
@@ -37,14 +29,6 @@
   align-items: center;
   flex: 1;
 }
-
-/* .form * {
-  border: 1px solid black;
-} */
-
-/* .form button {
-  margin: 0;
-} */
 
 .form span {
   font-size: 15px;

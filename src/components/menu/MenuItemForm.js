@@ -22,7 +22,6 @@ const MenuItemForm = (props) => {
       return;
     }
 
-    // console.log('enteredQtyNum: ', enteredQtyNum);
     props.onAddToCart(enteredQtyNum);
   };
 
