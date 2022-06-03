@@ -36,9 +36,26 @@ const Footer = () => {
         </li>
       </ul>
       <div className={classes.footerIcons}>
-        <p>FACEBOOK</p>
-        <p>TWITTER</p>
-        <p>INSTAGRAM</p>
+        <ion-icon
+          className={classes.ion}
+          size="large"
+          src="/logo-facebook.svg"
+        ></ion-icon>
+        <ion-icon
+          className={classes.ion}
+          size="large"
+          src="/logo-twitter.svg"
+        ></ion-icon>
+        <ion-icon
+          className={classes.ion}
+          size="large"
+          src="/logo-instagram.svg"
+        ></ion-icon>
+        <ion-icon
+          className={classes.ion}
+          size="large"
+          src="/mail-outline.svg"
+        ></ion-icon>
       </div>
       <span>&copy; Copywright 2022 Ristorante San Giorgio</span>
     </footer>

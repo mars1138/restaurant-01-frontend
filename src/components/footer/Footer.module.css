@@ -41,6 +41,11 @@
 }
 
 .footerIcons {
+  width: 160px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.ion {
+  color: white;
 }
