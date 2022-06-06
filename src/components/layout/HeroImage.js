@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import image1 from '../../assets/pexels-narda-yescas-1566837.jpg';
 import image2 from '../../assets/pexels-narda-yescas-1566837.jpg';
-import image3 from '../../assets/pexels-pixabay-260922.jpg';
+import image3 from '../../assets/pexels-pixabay-260922crop.jpg';
 import classes from './HeroImage.module.css';
 
 const HeroImage = () => {
@@ -23,7 +23,7 @@ const HeroImage = () => {
           <img src={image3} className={classes.bgImageContent} alt="hero" />
         </Route>
       </div>
-      <div className="center heroHeader">
+      <div className={classes.heroHeader}>
         <Switch>
           <Route path="/success" exact>
             <h1>Thank You!</h1>

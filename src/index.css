@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
 
 :root {
+  --bp-large: 78.15em; /* 1250px */
+  --bp-medium: 61.25em; /* 980px */
+  --bp-small: 37.5em; /* 600px */
+  --bp-smallest: 31.25em; /* 500px */
+
   /* --heading1: rgb(252, 207, 95);
   --heading2: rgb(252, 207, 95); */
 
@@ -15,6 +20,8 @@
   --bottom-border: rgb(74, 143, 77);
 
   --img-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  --text-color: rgb(39, 39, 39);
 }
 
 *,
@@ -27,7 +34,13 @@
 
 html {
   font-size: 62.5%;
-  color: rgb(39, 39, 39);
+  color: var(--text-color);
+}
+
+@media only screen and (max-width: 980px) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -123,7 +136,7 @@ button:disabled:active {
   transform: translate(-50%, -50%);
 }
 
-.heroHeader {
+/* .heroHeader {
   width: 40%;
   line-height: 8rem;
   text-align: center;
@@ -132,13 +145,13 @@ button:disabled:active {
   top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
-.heroHeader h1 {
+/* .heroHeader h1 {
   font-size: 7rem;
   color: rgb(252, 207, 95);
   text-shadow: 2px 2px 4px #000000;
-}
+} */
 
 .container {
   width: 900px;

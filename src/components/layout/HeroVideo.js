@@ -12,7 +12,7 @@ const HeroVideo = () => {
           You browser does not support video!
         </video>
       </div>
-      <div className="heroHeader">
+      <div className={classes.heroHeader}>
         <h1>The Very Best Italian Cuisine</h1>
       </div>
     </div>
