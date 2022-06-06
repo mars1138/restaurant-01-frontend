@@ -5,6 +5,7 @@ import Home from './pages/HomePage';
 import About from './pages/AboutPage';
 import MenuPage from './pages/MenuPage';
 import Contact from './pages/ContactPage';
+import SuccessPage from './pages/SuccessPage';
 
 import LoadingSpinner from './components/UI/LoadingSpinner';
 import HeaderNav from './components/header/HeaderNav';
@@ -39,15 +40,15 @@ function App() {
 
         const loadedDishes = [];
 
-        data.forEach(dish => {
+        data.forEach((dish) => {
           loadedDishes.push(dish);
         });
 
         setDishes(loadedDishes);
 
-        const pastas = loadedDishes.filter(dish => dish.type === 'pasta');
-        const pizzas = loadedDishes.filter(dish => dish.type === 'pizza');
-        const desserts = loadedDishes.filter(dish => dish.type === 'dessert');
+        const pastas = loadedDishes.filter((dish) => dish.type === 'pasta');
+        const pizzas = loadedDishes.filter((dish) => dish.type === 'pizza');
+        const desserts = loadedDishes.filter((dish) => dish.type === 'dessert');
 
         setFeaturedDishes([pastas[0], pizzas[0], desserts[0]]);
       } catch (err) {
@@ -85,6 +86,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/success">
+              <SuccessPage />
             </Route>
           </Switch>
         </Suspense>

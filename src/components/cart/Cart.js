@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import Modal from '../UI/Modal';
 import InfoModal from '../UI/InfoModal';
 import CartItem from './CartItem';
-import Checkout from './Checkout';
+// import Checkout from './Checkout';
 import CartContext from '../store/cart-context';
 import LoadingSpinner from '../UI/LoadingSpinner';
 
@@ -27,9 +27,9 @@ const Cart = (props) => {
     cartCtx.addItem(item);
   };
 
-  const orderHandler = () => {
-    setIsCheckout(true);
-  };
+  // const orderHandler = () => {
+  //   setIsCheckout(true);
+  // };
 
   const clearErrorHandler = () => {
     setError(false);
@@ -37,41 +37,79 @@ const Cart = (props) => {
 
   let orderData;
 
-  const submitOrderHandler = async (orderData) => {
+  const orderStripeHandler = async () => {
+    console.log('order sent to stripe');
+    setIsSubmitting(true);
+    setDidSubmit(false);
+    setIsCheckout(false);
+
     try {
-      setIsSubmitting(true);
-      const response = await fetch('http://localhost:5000/api/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: orderData.name,
-          email: orderData.email,
-          phone: orderData.phone,
-          street: orderData.street,
-          city: orderData.city,
-          zipCode: orderData.zipCode,
-          creditCard: orderData.creditCard,
-        }),
-      });
+      const response = await fetch(
+        'http://localhost:5000/api/orders/stripe-order',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            items: cartCtx.items,
+          }),
+        }
+      );
 
-      const responseData = await response.json();
+      if (!response.ok) {
+        throw new Error();
+      }
 
-      if (!response.ok) throw new Error(responseData.message);
+      const resData = await response.json();
 
-      console.log('response data: ', responseData);
-      orderData = responseData;
-
+      console.log('resdata: ', resData);
+      props.onClose();
       setIsSubmitting(false);
-      setDidSubmit(true);
-      // cartCtx.clearCart();
+      window.location = resData.url;
     } catch (err) {
       console.log(err);
       setIsSubmitting(false);
-      setError(err.message || 'An unknown error occurred, please try again');
+      setError(true);
     }
   };
+
+  // const submitOrderHandler = async (orderData) => {
+  //   try {
+  //     setIsSubmitting(true);
+  //     const response = await fetch('http://localhost:5000/api/orders', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         name: orderData.name,
+  //         email: orderData.email,
+  //         phone: orderData.phone,
+  //         street: orderData.street,
+  //         city: orderData.city,
+  //         zipCode: orderData.zipCode,
+  //         creditCard: orderData.creditCard,
+  //         items: cartCtx.items,
+  //       }),
+  //     });
+
+  //     const responseData = await response.json();
+
+  //     if (!response.ok) throw new Error(responseData.message);
+
+  //     console.log('response data: ', responseData);
+  //     orderData = responseData;
+
+  //     setIsSubmitting(false);
+  //     setDidSubmit(true);
+  //     // cartCtx.clearCart();
+  //   } catch (err) {
+  //     console.log(err);
+  //     setIsSubmitting(false);
+  //     setError(err.message || 'An unknown error occurred, please try again');
+  //   }
+  // };
 
   const cartItems = (
     <ul className={classes['cart-items']}>
@@ -94,7 +132,7 @@ const Cart = (props) => {
         Close
       </button>
       {hasItems && (
-        <button className={classes.button} onClick={orderHandler}>
+        <button className={classes.button} onClick={orderStripeHandler}>
           Order
         </button>
       )}
@@ -109,19 +147,18 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {isCheckout && (
+      {/* {isCheckout && (
         <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
-      )}
+      )} */}
       {!isCheckout && modalActions}
     </React.Fragment>
   );
 
   const isSubmittingModalContent = (
     <div>
-      <p>Sending order data...</p>
+      <p className={classes.submitting}>Sending order data...</p>
 
-        <LoadingSpinner />
-      {/* <img src={sendingIcon} /> */}
+      <LoadingSpinner />
     </div>
   );
 

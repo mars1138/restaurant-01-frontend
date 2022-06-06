@@ -55,3 +55,7 @@
   border: 2px solid var(--button-main);
   color: white;
 }
+
+.submitting {
+  font-size: 2rem;
+}

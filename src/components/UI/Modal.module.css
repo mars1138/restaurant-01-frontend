@@ -12,6 +12,7 @@
   position: fixed;
   top: 5vh;
   left: 5%;
+  min-height: 175px;
   width: 90%;
   background-color: white;
   padding: 2rem;

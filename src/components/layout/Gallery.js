@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import LocImg1 from '../../assets/pexels-nancy-bourque-1148565.jpg';
 import LocImg2 from '../../assets/pexels-life-of-pix-67468.jpg';
@@ -22,6 +22,8 @@ import menuImg7 from '../../assets/menu/pexels-pixabay-327143.jpg';
 
 import contactImg1 from '../../assets/contact/pexels-roman-odintsov-4551517.jpg';
 import contactImg2 from '../../assets/contact/pexels-kenneth-2838588.jpg';
+
+import successImg1 from '../../assets/pexels-pixabay-263564.jpg';
 
 import classes from './Gallery.module.css';
 
@@ -106,14 +108,37 @@ const contactContent = (
     />
   </div>
 );
+const successContent = (
+  <div className={classes['grid-success']}>
+    <img
+      src={successImg1}
+      className={classes['success--1']}
+      alt="restaurant misc"
+    />
+    {/* <img
+      src={contactImg2}
+      className={classes['contact--2']}
+      alt="restaurant misc"
+    /> */}
+  </div>
+);
+
+// const successContent = (
+//   <div className={classes['grid-success']}>
+//     <img src={successImg1} className={classes['success--1']} alt="success" />
+//   </div>
+// );
 
 const Gallery = () => {
   return (
     <React.Fragment>
-      <Route path="/home">{homeContent}</Route>
-      <Route path="/about">{aboutContent}</Route>
-      <Route path="/menu">{menuContent}</Route>
-      <Route path="/contact">{contactContent}</Route>
+      <Switch>
+        <Route path="/home">{homeContent}</Route>
+        <Route path="/about">{aboutContent}</Route>
+        <Route path="/menu">{menuContent}</Route>
+        <Route path="/contact">{contactContent}</Route>
+        <Route path="/success">{successContent}</Route>
+      </Switch>
     </React.Fragment>
   );
 };

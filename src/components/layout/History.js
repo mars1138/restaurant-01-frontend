@@ -38,8 +38,8 @@ const History = () => {
           </p>
         </Route>
         <Route path="/home">
-          <Link className="btn" to="/about">
-            Read More
+          <Link to="/about">
+            <button className="btn">Read More</button>
           </Link>
         </Route>
       </div>
