@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
 }
+
+
 .list {
   list-style-type: none;
   width: 50%;
@@ -51,4 +53,27 @@
 
 .dishInfo p {
   font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 980px) {
+  .featured {
+    height: 85%
+    /* width: 100%;
+    margin: 0 auto;
+    padding: 8rem 2rem 10rem 2rem; */
+  }
+}
+
+@media only screen and (max-width: 880px){
+  .list li {
+    height: 30%;
+  }
+
+  .dishInfo {
+    padding: 1rem 1.5rem;
+  }
+
+  .dishInfo p {
+    font-size: 1.3rem;
+  }
 }

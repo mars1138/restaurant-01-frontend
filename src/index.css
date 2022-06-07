@@ -4,7 +4,8 @@
 :root {
   --bp-large: 78.15em; /* 1250px */
   --bp-medium: 61.25em; /* 980px */
-  --bp-small: 37.5em; /* 600px */
+  --bp-medium-sm: 45em /* 860px */
+  --bp-small: 37.5em; /* 715px */
   --bp-smallest: 31.25em; /* 500px */
 
   /* --heading1: rgb(252, 207, 95);
@@ -159,6 +160,16 @@ button:disabled:active {
   padding: 8rem 2rem 10rem 2rem;
   display: flex;
   justify-content: center;
+
+  /* border: 1px solid blue; */
+}
+
+@media only screen and (max-width: 980px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 8rem 2rem 10rem 2rem;
+  }
 }
 
 .container p {
@@ -200,6 +211,7 @@ button:disabled:active {
 }
 
 .bg-awhite {
+  background-color: rgb(238, 165, 81);
   background-color: rgb(252, 244, 235);
 }
 

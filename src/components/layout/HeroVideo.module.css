@@ -9,6 +9,12 @@
   opacity: 0.95;
 }
 
+@media only screen and (max-width: 980px) {
+  .bgVideo {
+    height: 40vh;
+  }
+}
+
 .bgVideoContent {
   opacity: 0.65;
   height: 100%;

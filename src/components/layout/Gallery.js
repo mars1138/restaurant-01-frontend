@@ -62,7 +62,7 @@ const homeContent = (
   </div>
 );
 const aboutContent = (
-  <div className={classes['grid-menu']}>
+  <div className={classes['grid-about']}>
     <img
       src={aboutImg1}
       className={classes['about--1']}

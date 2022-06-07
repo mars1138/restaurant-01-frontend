@@ -1,7 +1,8 @@
 .slide img,
 .grid-about img,
 .grid-menu img,
-.grid-contact img {
+.grid-contact img,
+.grid-success img {
   box-shadow: var(--img-shadow);
 }
 
@@ -114,6 +115,7 @@
   grid-template-columns: repeat(4, 175px);
   grid-template-rows: repeat(2, 150px);
   gap: 2rem;
+  /* border: 1px solid blue; */
 }
 
 .grid-contact img {
@@ -146,4 +148,34 @@
   width: 100%;
   /* grid-row: 1 / span 2;
   grid-column: 1 / span 2; */
+}
+
+/*============================================*/
+
+@media only screen and (max-width: 860px) {
+  /* .slide,
+  .grid-about,
+  .grid-menu,
+  .grid-contact,
+  .grid-success {
+  } */
+
+  .grid-about,
+  .grid-menu {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 0.7fr);
+    gap: 1.5rem;
+  }
+
+  .grid-menu {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 0.35fr);
+    gap: 1.5rem;
+  }
+
+  .grid-contact {
+    grid-template-columns: repeat(4, 23%);
+    grid-template-rows: repeat(2, 55%);
+    gap: 1.5rem;
+  }
 }
