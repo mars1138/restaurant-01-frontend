@@ -4,13 +4,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
 .mainImage {
-  /* width: 80%; */
-  /* padding: 0 1.5rem; */
-  margin: 0 3.5rem;
+  width: 100%;
+  margin: 0 0 0 2.5rem;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -18,6 +16,6 @@
 
 .mainImage img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  transform: translateX(-35%);
 }

@@ -8,7 +8,7 @@ const FeaturedDishes = () => {
 
   return (
     <React.Fragment>
-      <div className="container-text flex-column">
+      <div className="container-text container-text-50 flex-column">
         <h2>Chef Lorenzo</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
