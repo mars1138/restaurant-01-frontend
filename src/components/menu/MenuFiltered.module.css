@@ -18,3 +18,27 @@
 
   text-align: center;
 }
+
+@media only screen and (max-width: 860px) {
+  .menu-control {
+    width: 90%;
+    text-align: left;
+  }
+
+  .menu-control h3 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  .menu-control {
+    width: 100%;
+    /* border: 1px solid blue; */
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .menu-control {
+    /* margin: 10px 0 0 0; */
+  }
+}

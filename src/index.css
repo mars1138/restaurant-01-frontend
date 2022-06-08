@@ -6,7 +6,7 @@
   --bp-medium: 61.25em; /* 980px */
   --bp-medium-sm: 45em /* 860px */
   --bp-small: 37.5em; /* 715px */
-  --bp-smallest: 31.25em; /* 500px */
+  --bp-smallest: 31.25em; /* 600px */
 
   /* --heading1: rgb(252, 207, 95);
   --heading2: rgb(252, 207, 95); */
@@ -41,6 +41,12 @@ html {
 @media only screen and (max-width: 980px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  html {
+    font-size: 45%;
   }
 }
 
@@ -167,8 +173,17 @@ button:disabled:active {
 @media only screen and (max-width: 980px) {
   .container {
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 8rem 2rem 10rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    width: 100%;
+    padding: 4rem 0;
+    margin: 0;
+
   }
 }
 
