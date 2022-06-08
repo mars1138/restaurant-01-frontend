@@ -11,7 +11,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 2px;
+
   box-shadow: var(--img-shadow);
 }
 
@@ -33,4 +33,28 @@
 .about1 {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    max-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .grid img {
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .home1,
+  .home2 {
+    display: none;
+  }
+  .home3 {
+    /* transform: translateY(-50%); */
+    /* z-index: -1; */
+  }
 }

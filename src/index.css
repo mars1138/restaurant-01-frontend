@@ -46,7 +46,7 @@ html {
 
 @media only screen and (max-width: 550px) {
   html {
-    font-size: 45%;
+    font-size: 55%;
   }
 }
 
@@ -160,6 +160,12 @@ button:disabled:active {
   text-shadow: 2px 2px 4px #000000;
 } */
 
+.flex-wrapper {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   width: 900px;
   margin: 0 auto;
@@ -178,25 +184,53 @@ button:disabled:active {
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .container {
-    width: 100%;
-    padding: 4rem 0;
-    margin: 0;
-
-  }
-}
-
 .container p {
   font-size: 1.5rem;
   margin-bottom: 3rem;
 }
 
 .container-text {
+  padding: 0 1.5rem 2.5rem 1.5rem;
+  margin: 0;
+  display: flex;
+}
+.container-img {
   padding: 0 1.5rem;
   margin: 0;
   display: flex;
 }
+
+.container-50 {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 4rem 0 0 0;
+    margin: 0;
+    /* border: 1px solid blue; */
+  }
+
+  .container-img {
+    padding: 0;
+  }
+  
+  .container-50 {
+    width: 100%;
+    /* border: 1px solid blue; */
+  }
+  
+  .flex-wrapper {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    /* border: 1px solid blue; */
+  }
+}
+
+
+
+
 
 .container-video,
 .container-image {
@@ -215,14 +249,17 @@ button:disabled:active {
   justify-content: flex-start;
 }
 
-.container-text-50 {
-  width: 50%;
-}
 
 .section {
   position: relative;
   margin: 0 auto;
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
 }
 
 .bg-awhite {

@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-
 .list {
   list-style-type: none;
   width: 50%;
@@ -57,14 +56,14 @@
 
 @media only screen and (max-width: 980px) {
   .featured {
-    height: 85%
+    height: 85%;
     /* width: 100%;
     margin: 0 auto;
     padding: 8rem 2rem 10rem 2rem; */
   }
 }
 
-@media only screen and (max-width: 880px){
+@media only screen and (max-width: 880px) {
   .list li {
     height: 30%;
   }
@@ -75,5 +74,36 @@
 
   .dishInfo p {
     font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .featured {
+    /* height: 80rem; */
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .list {
+    width: 100%;
+    margin: 0;
+    /* border: 1px solid blue; */
+  }
+
+  .list li {
+    height: 130px;
+    margin-bottom: 1rem;
+  }
+
+  .mainImage {
+    height: 35rem;
+    width: 100%;
+    margin: 2.5rem 0 0 0;
+    border-radius: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }

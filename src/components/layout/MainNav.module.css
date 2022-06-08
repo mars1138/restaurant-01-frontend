@@ -30,3 +30,18 @@
 .navList a.active {
   border-bottom: 2px solid rgb(247, 247, 247);
 }
+
+@media only screen and (max-width: 980px) {
+  .navList a:link,
+  .navList a:active,
+  .navList a:visited {
+    font-size: 1.5rem;
+  } 
+}
+@media only screen and (max-width: 860px) {
+  .navList a:link,
+  .navList a:active,
+  .navList a:visited {
+    /* font-size: smaller; */
+  } 
+}
