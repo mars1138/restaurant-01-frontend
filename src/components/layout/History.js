@@ -3,7 +3,11 @@ import { Route, Link } from 'react-router-dom';
 
 import ImageGrid from './ImageGrid';
 
+import classes from './History.module.css'
+
 const History = () => {
+  const buttonClasses = `btn ${classes.button}`;
+
   return (
     <React.Fragment>
       <div className="flex-wrapper">
@@ -40,7 +44,7 @@ const History = () => {
           </Route>
           <Route path="/home">
             <Link to="/about">
-              <button className="btn">Read More</button>
+              <button className={buttonClasses}>Read More</button>
             </Link>
           </Route>
         </div>

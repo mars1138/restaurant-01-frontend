@@ -180,7 +180,7 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .grid-about,
   .grid-menu {
     padding-left: 1.5rem;

@@ -1,7 +1,7 @@
 .menu-nav {
   width: 78%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -11,7 +11,8 @@
 
 .menu-nav li {
   width: 9%;
-  margin: 1rem 3rem;
+  width: auto;
+  margin: 0 3rem;
 }
 
 .menu-nav a:link,
@@ -32,4 +33,16 @@
 
 .menu-nav a:not(.active) {
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-nav {
+    width: 100%;
+    border-radius: 0px;
+    justify-content: center;
+  }
+
+  .menu-nav li {
+    width: auto;
+  }
 }

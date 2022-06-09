@@ -1,4 +1,4 @@
-.mainImage {
+/* .mainImage {
   height: 75%;
   width: 50%;
   overflow: hidden;
@@ -8,4 +8,10 @@
   height: 100%;
   width: auto;
   object-fit: cover;
+} */
+
+@media only screen and (max-width: 600px) {
+  .button {
+    margin: 0 0 3rem 0;
+  }
 }

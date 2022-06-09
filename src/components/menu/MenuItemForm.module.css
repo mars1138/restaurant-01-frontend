@@ -9,3 +9,19 @@
   border: none;
 }
 
+@media only screen and (max-width: 600px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid blue; */
+  }
+
+  .form button {
+    font-size: 1.8rem;
+    width: 9rem;
+    margin-top: 0;
+    padding: 1rem;
+  }
+}

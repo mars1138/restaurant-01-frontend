@@ -44,9 +44,9 @@ html {
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   html {
-    font-size: 55%;
+    font-size: 65%;
   }
 }
 
@@ -97,7 +97,7 @@ button:disabled:active {
 .btn-alt {
   /* width: 23%; */
   margin-top: 20px;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   background-color: var(--button-main);
   border-radius: 20px;
   /* color: rgb(29, 66, 8); */
@@ -176,13 +176,6 @@ button:disabled:active {
   /* border: 1px solid blue; */
 }
 
-@media only screen and (max-width: 980px) {
-  .container {
-    width: 90%;
-    margin: 20px auto;
-    padding: 8rem 2rem 10rem 2rem;
-  }
-}
 
 .container p {
   font-size: 1.5rem;
@@ -204,16 +197,26 @@ button:disabled:active {
   width: 50%;
 }
 
+@media only screen and (max-width: 980px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 8rem 2rem 10rem 2rem;
+  }
+}
 @media only screen and (max-width: 600px) {
   .container {
     width: 100%;
     padding: 4rem 0 0 0;
     margin: 0;
-    /* border: 1px solid blue; */
   }
 
   .container-img {
     padding: 0;
+  }
+
+  .container-text {
+    padding: 3rem 2rem 0rem 2rem;
   }
   
   .container-50 {
@@ -246,7 +249,7 @@ button:disabled:active {
 
 .flex-column {
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 
