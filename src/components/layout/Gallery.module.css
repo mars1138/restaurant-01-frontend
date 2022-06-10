@@ -31,7 +31,7 @@
 
 .slide h3 {
   font-family: inherit;
-  font-size: medium;
+  font-size: 1.8rem;
   font-weight: 500;
   color: inherit;
   text-shadow: none;
@@ -39,9 +39,20 @@
   margin: 1rem;
 }
 
-.slideAbout {
+/* .slideAbout {
   height: 100px;
   width: 25%;
+} */
+
+@media only screen and (max-width: 600px) {
+  .slideshow {
+    flex-direction: column;
+  }
+
+  .slide {
+    width: 100%;
+    margin: 0 0 4rem 0;
+  }
 }
 
 /*============================================*/
@@ -190,7 +201,6 @@
   .grid-contact {
     display: flex;
     padding: 0;
-    
   }
 
   .contact--1 {

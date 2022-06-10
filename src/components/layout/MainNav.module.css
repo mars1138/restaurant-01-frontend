@@ -36,12 +36,35 @@
   .navList a:active,
   .navList a:visited {
     font-size: 1.5rem;
-  } 
+  }
 }
 @media only screen and (max-width: 860px) {
   .navList a:link,
   .navList a:active,
   .navList a:visited {
     /* font-size: smaller; */
-  } 
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  .navList {
+    flex-direction: column;
+    width: 10rem;
+    margin-top: 20rem;
+    background-color: rgba(32, 32, 32, 0.63);
+  }
+
+  .navList::before {
+    content: '';
+    border-bottom: 2px solid white;
+    width: 60%;
+  }
+
+  .navList li {
+    width: 100%;
+    padding-left: 2rem;
+    margin: 0;
+    border-bottom: 1px solid rgba(32, 32, 32, 0.63);
+    /* border: 1px solid blue; */
+  }
 }
