@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
 import HeaderCartButton from '../header/HeaderCartButton';
-import classes from './MainNav.module.css';
+// import classes from './MainNav.module.css';
 
-const MainNav = (props) => {
+const NavLinks = (props) => {
   return (
     <nav className={classes.mainNav}>
       <ul className={classes.navList}>
@@ -35,4 +35,4 @@ const MainNav = (props) => {
   );
 };
 
-export default MainNav;
+export default NavLinks;
