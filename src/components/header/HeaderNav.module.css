@@ -1,6 +1,12 @@
 .header {
 }
 
+.header__main-nav {
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: 0;
+}
+
 .headerControl {
   position: fixed;
   top: 0;
@@ -27,8 +33,39 @@
   letter-spacing: 3px;
 }
 
+.button {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.button span {
+  display: block;
+  width: 3rem;
+  height: 2.5px;
+  background: white;
+}
+
 @media only screen and (max-width: 980px) {
   .title {
     font-size: 3.5rem;
   }
+}
+
+@media only screen and (max-width: 715px) {
+  .button {
+    display: flex;
+  }
+  .header__main-nav {
+    display: none;
+  }
+  /* .header__side-nav {
+    display: block;
+  } */
 }

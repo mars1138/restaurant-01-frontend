@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Logo from './Logo';
 import MainNav from '../layout/MainNav';
 import classes from './HeaderNav.module.css';
 import Hero from '../layout/Hero';
 import SideDrawer from './SideDrawer';
+import Backdrop from '../UI/Backdrop';
 
-const HeaderNav = (props) => {
+const HeaderNav = props => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   useEffect(() => {
     const nav = document.getElementById('stickyNav');
     const navHeight = nav.getBoundingClientRect().height;
@@ -29,8 +32,12 @@ const HeaderNav = (props) => {
   }, []);
 
   const openDrawerHandler = () => {
-    //
-  }
+    setDrawerOpen(true);
+  };
+
+  const closeDrawerHandler = () => {
+    setDrawerOpen(false);
+  };
 
   const headerClasses = `${classes.header}`;
 
@@ -43,17 +50,16 @@ const HeaderNav = (props) => {
           <nav className={classes['header__main-nav']}>
             <MainNav onShowCart={props.onShowCart} />
           </nav>
-          <button onClick={openDrawerHandler}>
+          <button className={classes.button} onClick={openDrawerHandler}>
             <span />
             <span />
             <span />
           </button>
-
-          <SideDrawer>
-
-          <nav className={classes['header__side-nav']}>
-            <MainNav onShowCart={props.onShowCart} />
-          </nav>
+          {drawerOpen && <Backdrop onClick={closeDrawerHandler} />}
+          <SideDrawer show={drawerOpen} onClick={closeDrawerHandler}>
+            <nav className={classes['header__side-nav']}>
+              <MainNav onShowCart={props.onShowCart} />
+            </nav>
           </SideDrawer>
         </div>
         <Hero />

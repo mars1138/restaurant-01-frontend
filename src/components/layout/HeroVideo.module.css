@@ -65,4 +65,8 @@
   .heroHeader {
     width: 55%;
   }
+
+  .bgVideoContent {
+    width: 100%;
+  }
 }

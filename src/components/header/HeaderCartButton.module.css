@@ -39,3 +39,15 @@
   left: 50%;
   transform: translate(-55%, -50%);
 }
+
+@media only screen and (max-width: 715px) {
+  .button {
+    width: 6rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .button {
+    width: 5rem;
+  }
+}
