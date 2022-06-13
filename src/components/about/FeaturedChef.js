@@ -7,8 +7,8 @@ const FeaturedDishes = () => {
   console.log(image1);
 
   return (
-    <React.Fragment>
-      <div className="container-text container-text-50 flex-column">
+    <div className="flex-wrapper">
+      <div className="container-text container-50 flex-column">
         <h2>Chef Lorenzo</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
@@ -28,7 +28,7 @@ const FeaturedDishes = () => {
           <img src={image1} alt="featured" />
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

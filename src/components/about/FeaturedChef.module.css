@@ -19,3 +19,20 @@
   width: 100%;
   object-fit: cover;
 }
+
+@media only screen and (max-width: 715px) {
+  .mainImage {
+    /* height: 35rem; */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .featured {
+    width: 100%;
+    order: -1;
+  }
+
+  .mainImage {
+    margin: 0;
+  }
+}

@@ -2,12 +2,26 @@
   display: none;
 } */
 
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media only screen and (max-width: 715px) {
   .side-drawer {
     position: fixed;
-    left: 0;
+    right: 0;
     top: 0;
     z-index: 100;
+
+    animation: slide-right 300ms ease-out forwards; 
     /* height: 100vh; */
     /* width: 70%; */
     /* background: white; */

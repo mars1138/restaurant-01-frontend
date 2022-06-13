@@ -7,7 +7,7 @@ const MenuNav = () => {
   return (
     <ul className={classes['menu-nav']}>
       <li>
-        <NavLink activeClassName={classes.active} to="/menu">
+        <NavLink exact activeClassName={classes.active} to="/menu" id="link">
           All
         </NavLink>
       </li>

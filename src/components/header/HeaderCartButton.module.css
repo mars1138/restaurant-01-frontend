@@ -44,10 +44,25 @@
   .button {
     width: 6rem;
   }
+
+  .badge {
+    height: 3.5rem;
+    width: 3.5rem;
+
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .button {
     width: 5rem;
+  }
+  
+  .badge {
+    height: 3rem;
+    width: 3rem;
+  
+    font-size: 1.5rem;
+    bottom: 52%;
   }
 }

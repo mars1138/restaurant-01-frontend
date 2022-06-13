@@ -5,8 +5,8 @@ import classes from './OrderOnline.module.css';
 
 const FeaturedDishes = () => {
   return (
-    <React.Fragment>
-      <div className="container-text container-text-50 flex-column">
+    <div className="flex-wrapper">
+      <div className="container-text container-50 flex-column">
         <h2>Order Online</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
@@ -15,12 +15,12 @@ const FeaturedDishes = () => {
           necessitatibus fugit.
         </p>
       </div>
-      <div className={classes.featured}>
+      {/* <div className={classes.featured}> */}
         <div className={classes.mainImage}>
           <img src={image1} alt="featured" />
         </div>
-      </div>
-    </React.Fragment>
+      {/* </div> */}
+    </div>
   );
 };
 

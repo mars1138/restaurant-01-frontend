@@ -52,7 +52,7 @@
     width: 22rem;
     position: fixed;
     right: 0;
-    z-index: 109;
+    z-index: 500;
   }
 
   .navList {
@@ -79,7 +79,14 @@
 
   .navList li a {
     height: 70%;
-    width: 60%;
+    width: 100%;
+  }
+
+  .navList a:hover,
+  .navList a.active {
+    border-bottom: 2px solid transparent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
   }
 
   .navList a:link,
@@ -96,14 +103,14 @@
   .navList li {
     height: 20%;
     width: 100%;
-    padding-top: 0;
-    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-left: 5rem;
     margin: 0;
   }
 
   .navList li a {
     height: 70%;
-    width: 80%;
+    width: 100%;
   }
 
   .navList a:link,

@@ -7,3 +7,9 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    flex-direction: column;
+  }
+}

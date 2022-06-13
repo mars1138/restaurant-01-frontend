@@ -9,12 +9,11 @@ const History = () => {
   const buttonClasses = `btn ${classes.button}`;
 
   return (
-    <React.Fragment>
       <div className="flex-wrapper">
         <div className="container-img container-50">
           <ImageGrid />
         </div>
-        <div className="container-text container-50 flex-column">
+        <div className="container-text container-50">
           <h2>Our History</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
@@ -49,7 +48,6 @@ const History = () => {
           </Route>
         </div>
       </div>
-    </React.Fragment>
   );
 };
 

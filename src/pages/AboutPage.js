@@ -5,7 +5,7 @@ import Gallery from '../components/layout/Gallery';
 import History from '../components/layout/History';
 import FeaturedChef from '../components/about/FeaturedChef';
 
-const About = () => {
+const About = (props) => {
   return (
     <React.Fragment>
       <Section>

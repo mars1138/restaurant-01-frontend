@@ -53,3 +53,10 @@
   border-color: #aa0b20;
   background-color: #ffeff1;
 }
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    width: 90%;
+    margin: 0 auto 5rem auto;
+  }
+}

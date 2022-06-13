@@ -9,12 +9,6 @@
   opacity: 0.95;
 }
 
-@media only screen and (max-width: 980px) {
-  .bgVideo {
-    height: 40vh;
-  }
-}
-
 .bgVideoContent {
   opacity: 0.65;
   height: 100%;
@@ -59,6 +53,10 @@
   .heroHeader h1 {
     font-size: 6rem;
   }
+
+  .bgVideo {
+    height: 40vh;
+  }
 }
 
 @media only screen and (max-width: 715px) {
@@ -68,5 +66,32 @@
 
   .bgVideoContent {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .heroHeader {
+    line-height: 5rem;
+    width: 90%;
+    top: 60%;
+  }
+  .heroHeader h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .heroHeader {
+    line-height: 3rem;
+    top: 65%;
+  }
+  .heroHeader h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .heroHeader {
+    top: 70%;
   }
 }

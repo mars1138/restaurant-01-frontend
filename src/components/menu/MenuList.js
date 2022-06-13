@@ -5,11 +5,11 @@ import MenuNav from './MenuNav';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import MenuFiltered from './MenuFiltered';
 
-const MenuList = props => {
-  const pastas = props.menu.filter(dish => dish.type === 'pasta');
-  const pizzas = props.menu.filter(dish => dish.type === 'pizza');
-  const salads = props.menu.filter(dish => dish.type === 'salad');
-  const desserts = props.menu.filter(dish => dish.type === 'dessert');
+const MenuList = (props) => {
+  const pastas = props.menu.filter((dish) => dish.type === 'pasta');
+  const pizzas = props.menu.filter((dish) => dish.type === 'pizza');
+  const salads = props.menu.filter((dish) => dish.type === 'salad');
+  const desserts = props.menu.filter((dish) => dish.type === 'dessert');
 
   const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
   const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
@@ -43,16 +43,16 @@ const MenuList = props => {
             {dessertMenu}
           </Route>
           <Route path="/menu/pasta">
-            <MenuFiltered dishes={pastas} type="Pasta" />;
+            <MenuFiltered dishes={pastas} type="Pasta" />
           </Route>
           <Route path="/menu/pizza">
-            <MenuFiltered dishes={pizzas} type="Pizza" />;
+            <MenuFiltered dishes={pizzas} type="Pizza" />
           </Route>
           <Route path="/menu/dessert">
-            <MenuFiltered dishes={desserts} type="Dessert" />;
+            <MenuFiltered dishes={desserts} type="Dessert" />
           </Route>
           <Route path="/menu/salads">
-            <MenuFiltered dishes={salads} type="Salad" />;
+            <MenuFiltered dishes={salads} type="Salad" />
           </Route>
         </Switch>
       </Suspense>
