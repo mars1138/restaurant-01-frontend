@@ -12,7 +12,11 @@ const CartItem = (props) => {
         <span className={classes.price}>{price}</span>
         <span className={classes.quantity}>x {props.quantity}</span>
         <button className={classes.delete} onClick={props.onDelete}>
-          x
+          <ion-icon
+            className={classes.ion}
+            size="medium"
+            src="/trash-outline.svg"
+          ></ion-icon>
         </button>
       </div>
       <div className={classes.actions}>

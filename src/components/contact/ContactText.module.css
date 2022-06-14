@@ -18,6 +18,12 @@
   margin: 1rem 0 0 0;
 }
 
+@media only screen and (max-width: 715px) {
+  .contact-text-container {
+    width: 45%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .contact-text-container {
     width: 90%;

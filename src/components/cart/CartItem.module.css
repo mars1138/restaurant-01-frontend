@@ -11,6 +11,7 @@
 
 .cart-item h3 {
   width: 30%;
+  font-size: 1.5rem;
   text-align: left;
   /* margin: 0 auto; */
   /* color: #363636; */
@@ -41,9 +42,12 @@
 
 .delete {
   /* font-weight: bold; */
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
+}
+
+.delete ion-icon {
   color: #5e5d5d;
 }
 
@@ -58,7 +62,7 @@
 
 .subtotal {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 715px) {
@@ -92,7 +96,7 @@
 @media only screen and (max-width: 600px) {
   .cart-item h3 {
     width: 33%;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
   .summary {
     width: 10.5rem;

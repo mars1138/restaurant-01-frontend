@@ -44,5 +44,18 @@
 @media only screen and (max-width: 600px) {
   .menu-nav {
     border-radius: 0px;
+    justify-content: space-evenly;
+  }
+
+  .menu-nav a:link,
+  .menu-nav a:visited,
+  .menu-nav a:active {
+    font-size: 2.25rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .menu-nav {
+    padding: 2rem 1rem;
+    justify-content: space-between;
   }
 }

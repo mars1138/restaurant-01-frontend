@@ -54,6 +54,12 @@
   background-color: #ffeff1;
 }
 
+@media only screen and (max-width: 715px) {
+  .form-container {
+    width: 45%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .form-container {
     width: 90%;

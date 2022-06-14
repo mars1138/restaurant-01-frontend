@@ -24,7 +24,7 @@ const Cart = (props) => {
   };
 
   const itemAddHandler = (item) => {
-    cartCtx.addItem(item);
+    cartCtx.addItem(item, false, true);
   };
 
   const itemDeleteHandler = (id) => {
@@ -150,7 +150,7 @@ const Cart = (props) => {
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>{totalAmount}</span>
+        <span>{+totalAmount < 0 ? '$ 0.00' : totalAmount}</span>
       </div>
       {/* {isCheckout && (
         <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />

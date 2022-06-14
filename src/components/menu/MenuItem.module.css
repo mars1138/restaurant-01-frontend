@@ -57,12 +57,12 @@
     height: auto;
     margin-bottom: 2rem;
   }
-  
+
   .list-item img {
     width: 70%;
-    margin:1.5rem auto 0 auto;
+    margin: 1.5rem auto 0 auto;
   }
-  
+
   .form {
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -91,7 +91,8 @@
   }
 
   .text h3 {
-    font-size: 4rem;
+    text-align: center;
+    /* font-size: 4rem; */
   }
 
   .text p {
