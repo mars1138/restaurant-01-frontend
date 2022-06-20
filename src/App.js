@@ -12,6 +12,7 @@ import HeaderNav from './components/header/HeaderNav';
 import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
 import CartProvider from './components/store/CartProvider';
+import ScrollToTop from './components/utilities/ScrollToTop';
 
 import './App.css';
 
@@ -30,7 +31,9 @@ function App() {
   useEffect(() => {
     const sendRequest = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/menu`);
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/api/menu`
+        );
 
         const data = await response.json();
 
@@ -71,26 +74,28 @@ function App() {
             </div>
           }
         >
-          <Switch>
-            <Route path="/" exact>
-              <Redirect to="/home" />
-            </Route>
-            <Route path="/home">
-              <Home featured={featuredDishes} />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/menu">
-              <MenuPage menu={dishes} />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/success">
-              <SuccessPage />
-            </Route>
-          </Switch>
+          <ScrollToTop>
+            <Switch>
+              <Route path="/" exact>
+                <Redirect to="/home" />
+              </Route>
+              <Route path="/home">
+                <Home featured={featuredDishes} />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/menu">
+                <MenuPage menu={dishes} />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/success">
+                <SuccessPage />
+              </Route>
+            </Switch>
+          </ScrollToTop>
         </Suspense>
       </main>
       <Footer />
