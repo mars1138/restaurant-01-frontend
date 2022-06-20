@@ -51,11 +51,16 @@
   color: #5e5d5d;
 }
 
+.delete:hover ion-icon {
+  color: white;
+}
+
 .actions {
   /* flex-direction: row; */
   /* margin-right: 3rem; */
   /* border: 1px solid blue; */
 }
+
 .actions button {
   border: 1px solid #5e5d5d;
 }
@@ -76,8 +81,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: rgb(1, 107, 1);
-  border: 1px solidrgb(1, 107, 1);
+  color: var(--button-main);
+  border: 1px solid #ccc;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
@@ -89,7 +94,7 @@
 
 .cart-item button:hover,
 .cart-item button:active {
-  background-color: rgb(1, 107, 1);
+  background-color: var(--button-main);
   color: white;
 }
 

@@ -29,6 +29,10 @@
 }
 
 .actions button {
+  margin-left: 1rem;
+}
+
+/* .actions button {
   font: inherit;
   cursor: pointer;
   background-color: transparent;
@@ -43,9 +47,9 @@
   background-color: var(--button-main-hover);
   border-color: var(--button-main-hover);
   color: white;
-}
+} */
 
-.actions .button--alt {
+/* .actions .button--alt {
   color: var(--button-main);
   border: 2px solid var(--button-main);
 }
@@ -54,8 +58,26 @@
   background-color: var(--button-main);
   border: 2px solid var(--button-main);
   color: white;
+} */
+
+.submitting p {
+  font-size: 2rem;
 }
 
-.submitting {
-  font-size: 2rem;
+.location {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* display: flex;
+  flex-direction: column; */
+  /* border: 1px solid blue; */
+}
+
+.location label {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+} 
+
+.location select {
+  width: 33%;
+  border-radius: 2px;
 }

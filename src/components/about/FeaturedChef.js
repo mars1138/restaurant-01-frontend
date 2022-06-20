@@ -24,7 +24,7 @@ const FeaturedDishes = () => {
         </p>
       </div>
       <div className={classes.featured}>
-        <div className={classes.mainImage}>
+        <div className={classes['main-image']}>
           <img src={image1} alt="featured" />
         </div>
       </div>

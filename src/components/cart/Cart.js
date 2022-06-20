@@ -10,9 +10,10 @@ import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './Cart.module.css';
 
 const Cart = (props) => {
-  const [isCheckout, setIsCheckout] = useState(false);
+  // const [isCheckout, setIsCheckout] = useState(false);
+  const [location, setLocation] = useState('Downtown');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [didSubmit, setDidSubmit] = useState(false);
+  // const [didSubmit, setDidSubmit] = useState(false);
   const [error, setError] = useState();
   const cartCtx = useContext(CartContext);
 
@@ -39,13 +40,20 @@ const Cart = (props) => {
     setError(false);
   };
 
-  let orderData;
+  const setLocationHandler = (event) => {
+    setLocation(event.target.value);
+  };
+
+  // let orderData;
 
   const orderStripeHandler = async () => {
+    console.log('Location:', location);
     console.log('order sent to stripe');
     setIsSubmitting(true);
-    setDidSubmit(false);
-    setIsCheckout(false);
+    // setDidSubmit(false);
+    // setIsCheckout(false);
+
+    localStorage.setItem('items', JSON.stringify(cartCtx.items));
 
     try {
       const response = await fetch(
@@ -57,6 +65,7 @@ const Cart = (props) => {
           },
           body: JSON.stringify({
             items: cartCtx.items,
+            location: location,
           }),
         }
       );
@@ -131,13 +140,25 @@ const Cart = (props) => {
     </ul>
   );
 
+  const pickupLocation = (
+    <div className={classes.location}>
+      <label htmlFor="location">Choose a pickup location: &nbsp;</label>
+
+      <select name="location" id="location" onChange={setLocationHandler}>
+        <option value="Downtown">Downtown</option>
+        <option value="Suburbia">Suburbia</option>
+        <option value="Oldtown">Old Town</option>
+      </select>
+    </div>
+  );
+
   const modalActions = (
     <div className={classes.actions}>
-      <button className={classes['button--alt']} onClick={props.onClose}>
+      <button className="btn-alt" onClick={props.onClose}>
         Close
       </button>
       {hasItems && (
-        <button className={classes.button} onClick={orderStripeHandler}>
+        <button className="btn" onClick={orderStripeHandler}>
           Order
         </button>
       )}
@@ -152,38 +173,40 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{+totalAmount < 0 ? '$ 0.00' : totalAmount}</span>
       </div>
+      {pickupLocation}
+      {modalActions}
       {/* {isCheckout && (
         <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
       )} */}
-      {!isCheckout && modalActions}
+      {/* {!isCheckout && modalActions} */}
     </React.Fragment>
   );
 
   const isSubmittingModalContent = (
-    <div>
-      <p className={classes.submitting}>Sending order data...</p>
+    <div className={classes.submitting}>
+      <p>Sending order data...</p>
 
       <LoadingSpinner />
     </div>
   );
 
-  const didSubmitModalContent = (
-    <React.Fragment>
-      <p>Successfully sent the order!</p>
-      {orderData}
-      <div className={classes.actions}>
-        <button className={classes.button} onClick={props.onClose}>
-          Close
-        </button>
-      </div>
-    </React.Fragment>
-  );
+  // const didSubmitModalContent = (
+  //   <React.Fragment>
+  //     <p>Successfully sent the order!</p>
+  //     {orderData}
+  //     <div className={classes.actions}>
+  //       <button className="btn" onClick={props.onClose}>
+  //         Close
+  //       </button>
+  //     </div>
+  //   </React.Fragment>
+  // );
 
   return (
     <Modal onClose={props.onClose}>
-      {!error && !isSubmitting && !didSubmit && cartModalContent}
+      {!error && !isSubmitting && cartModalContent}
       {!error && isSubmitting && isSubmittingModalContent}
-      {!error && !isSubmitting && didSubmit && didSubmitModalContent}
+      {/* {!error && !isSubmitting && didSubmit && didSubmitModalContent} */}
       {error && <InfoModal error={error} onClear={clearErrorHandler} />}
     </Modal>
   );

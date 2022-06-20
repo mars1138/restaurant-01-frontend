@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.mainImage {
+.main-image {
   width: 100%;
   margin: 0 0 0 2.5rem;
   border-radius: 2px;
@@ -14,14 +14,14 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.mainImage img {
+.main-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
 @media only screen and (max-width: 715px) {
-  .mainImage {
+  .main-image {
     /* height: 35rem; */
   }
 }
@@ -32,7 +32,7 @@
     order: -1;
   }
 
-  .mainImage {
+  .main-image {
     margin: 0;
   }
 }

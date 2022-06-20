@@ -98,7 +98,7 @@ button:disabled:active {
 .btn-alt {
   /* width: 23%; */
   margin-top: 20px;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   background-color: var(--button-main);
   border-radius: 20px;
   /* color: rgb(29, 66, 8); */
