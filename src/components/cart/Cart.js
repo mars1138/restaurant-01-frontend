@@ -57,7 +57,7 @@ const Cart = (props) => {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/orders/stripe-order',
+        `${process.env.BACKEND_URL}/api/orders/stripe-order`,
         {
           method: 'POST',
           headers: {

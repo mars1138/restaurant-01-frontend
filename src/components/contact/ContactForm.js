@@ -108,18 +108,21 @@ const ContactForm = () => {
 
     try {
       setIsSubmitting(true);
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: enteredName,
-          email: enteredEmail,
-          phone: enteredPhone,
-          comments: enteredComments,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/contact`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: enteredName,
+            email: enteredEmail,
+            phone: enteredPhone,
+            comments: enteredComments,
+          }),
+        }
+      );
 
       const responseData = await response.json();
       console.log(responseData);

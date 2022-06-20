@@ -1,14 +1,15 @@
-import React, { useEffect, useContext, useCallback } from 'react';
+import React from 'react';
+// import React, { useEffect, useContext, useCallback } from 'react';
 
 import Section from '../components/layout/Section';
 import OrderOnline from '../components/menu/OrderOnline';
 import MenuList from '../components/menu/MenuList';
 import Gallery from '../components/layout/Gallery';
 
-import CartContext from '../components/store/cart-context';
+// import CartContext from '../components/store/cart-context';
 
 const MenuPage = (props) => {
-  const cartCtx = useContext(CartContext);
+  // const cartCtx = useContext(CartContext);
 
   // useEffect(
   //   useCallback(() => {

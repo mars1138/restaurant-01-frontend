@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     const sendRequest = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/menu');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/menu`);
 
         const data = await response.json();
 
