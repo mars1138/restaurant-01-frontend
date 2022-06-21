@@ -57,7 +57,7 @@ const Cart = (props) => {
 
     try {
       const response = await fetch(
-        `${process.env.BACKEND_URL}/api/orders/stripe-order`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/orders/stripe-order`,
         {
           method: 'POST',
           headers: {

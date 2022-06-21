@@ -1,26 +1,46 @@
-import React from 'react';
-// import React, { useEffect, useContext, useCallback } from 'react';
+// import React from 'react';
+import React, { useEffect, useContext } from 'react';
 
 import Section from '../components/layout/Section';
 import OrderOnline from '../components/menu/OrderOnline';
 import MenuList from '../components/menu/MenuList';
 import Gallery from '../components/layout/Gallery';
 
-// import CartContext from '../components/store/cart-context';
+import CartContext from '../components/store/cart-context';
 
 const MenuPage = (props) => {
-  // const cartCtx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
 
-  // useEffect(
-  //   useCallback(() => {
-  //     // const {addItem} = cartCtx;
+  const { addItem } = cartCtx;
 
-  //     const savedItems = JSON.parse(localStorage.getItem('items'));
+  // const restoreItem =
+  // useCallback(
+  //   (item) => {
+  //     addItem(item);
+  //   }, []
+  // )
 
-  //     savedItems.forEach((item) => cartCtx.addItem(item));
-  //   }),
-  //   []
-  // );
+  // const { addItem } = cartCtx;
+
+  // const getSavedItems = useCallback(() => {
+  //   const savedItems = JSON.parse(localStorage.getItem('items'));
+
+  //   savedItems.forEach((item) => {
+  //     console.log('get saved item...');
+  //     return cartCtx.addItem(item);
+  //   });
+  // }, [cartCtx]);
+
+  // useEffect(getSavedItems(), []);
+
+  useEffect(() => {
+    const savedItems = JSON.parse(localStorage.getItem('items'));
+
+    if (savedItems) {
+      savedItems.forEach((item) => addItem(item));
+      localStorage.removeItem('items');
+    }
+  }, [addItem]);
 
   return (
     <React.Fragment>
