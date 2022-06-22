@@ -41,6 +41,8 @@ const cartReducer = (state, action) => {
       updatedItems = state.items.concat(action.item);
     }
 
+    localStorage.setItem('items', JSON.stringify(updatedItems));
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -74,6 +76,8 @@ const cartReducer = (state, action) => {
 
     console.log(updatedTotalAmt);
 
+    localStorage.setItem('items', JSON.stringify(updatedItems));
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmt,
@@ -92,6 +96,8 @@ const cartReducer = (state, action) => {
 
     const updatedItems = state.items.filter((item) => item.id !== action.id);
 
+    localStorage.setItem('items', JSON.stringify(updatedItems));
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmt,
@@ -99,6 +105,8 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === 'CLEAR') {
+    localStorage.removeItem('items');
+
     return defaultCartState;
   }
 

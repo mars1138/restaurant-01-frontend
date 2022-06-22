@@ -20,7 +20,7 @@
 .navList a:visited {
   color: rgb(247, 247, 247);
   text-decoration: none;
-  font-size: medium;
+  font-size: 1.5rem;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
   padding: 0.5rem 0;

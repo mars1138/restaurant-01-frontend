@@ -44,8 +44,6 @@ const Cart = (props) => {
     setLocation(event.target.value);
   };
 
-  // let orderData;
-
   const orderStripeHandler = async () => {
     console.log('Location:', location);
     console.log('order sent to stripe');

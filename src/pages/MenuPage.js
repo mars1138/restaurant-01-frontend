@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 
 import Section from '../components/layout/Section';
 import OrderOnline from '../components/menu/OrderOnline';
@@ -9,9 +9,10 @@ import Gallery from '../components/layout/Gallery';
 import CartContext from '../components/store/cart-context';
 
 const MenuPage = (props) => {
+  const [cartReloaded, setCartReloaded] = useState(false);
   const cartCtx = useContext(CartContext);
 
-  const { addItem } = cartCtx;
+  const { addItem, items } = cartCtx;
 
   // const restoreItem =
   // useCallback(
@@ -35,12 +36,14 @@ const MenuPage = (props) => {
 
   useEffect(() => {
     const savedItems = JSON.parse(localStorage.getItem('items'));
-
-    if (savedItems) {
+    if (!cartReloaded && items.length === 0 && savedItems.length > 0) {
       savedItems.forEach((item) => addItem(item));
-      localStorage.removeItem('items');
     }
-  }, [addItem]);
+  }, [addItem, cartReloaded, items.length]);
+
+  useEffect(() => {
+    setCartReloaded(true);
+  }, [setCartReloaded]);
 
   return (
     <React.Fragment>
