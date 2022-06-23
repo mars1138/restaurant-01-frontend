@@ -51,7 +51,7 @@ const Cart = (props) => {
     // setDidSubmit(false);
     // setIsCheckout(false);
 
-    localStorage.setItem('items', JSON.stringify(cartCtx.items));
+    localStorage.setItem('cart', JSON.stringify(cartCtx.items));
 
     try {
       const response = await fetch(
@@ -74,10 +74,12 @@ const Cart = (props) => {
 
       const resData = await response.json();
 
-      console.log('resdata: ', resData);
+      // console.log('resdata: ', resData);
       props.onClose();
       setIsSubmitting(false);
+
       window.location = resData.url;
+
     } catch (err) {
       console.log(err);
       setIsSubmitting(false);

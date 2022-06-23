@@ -13,8 +13,13 @@ const ContactPage = () => {
   const { addItem, items } = cartCtx;
 
   useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem('items'));
-    if (!cartReloaded && items.length === 0 && savedItems.length > 0) {
+    const savedItems = JSON.parse(localStorage.getItem('cart'));
+    if (
+      !cartReloaded &&
+      items.length === 0 &&
+      savedItems &&
+      savedItems.length > 0
+    ) {
       savedItems.forEach((item) => addItem(item));
     }
   }, [addItem, cartReloaded, items.length]);

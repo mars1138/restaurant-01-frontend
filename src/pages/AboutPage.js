@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import Section from '../components/layout/Section';
 import Gallery from '../components/layout/Gallery';
@@ -7,7 +7,6 @@ import FeaturedChef from '../components/about/FeaturedChef';
 
 import CartContext from '../components/store/cart-context';
 
-
 const About = (props) => {
   const [cartReloaded, setCartReloaded] = useState(false);
   const cartCtx = useContext(CartContext);
@@ -15,8 +14,13 @@ const About = (props) => {
   const { addItem, items } = cartCtx;
 
   useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem('items'));
-    if (!cartReloaded && items.length === 0 && savedItems.length > 0) {
+    const savedItems = JSON.parse(localStorage.getItem('cart'));
+    if (
+      !cartReloaded &&
+      items.length === 0 &&
+      savedItems &&
+      savedItems.length > 0
+    ) {
       savedItems.forEach((item) => addItem(item));
     }
   }, [addItem, cartReloaded, items.length]);
