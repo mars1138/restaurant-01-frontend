@@ -14,26 +14,6 @@ const MenuPage = (props) => {
 
   const { addItem, items } = cartCtx;
 
-  // const restoreItem =
-  // useCallback(
-  //   (item) => {
-  //     addItem(item);
-  //   }, []
-  // )
-
-  // const { addItem } = cartCtx;
-
-  // const getSavedItems = useCallback(() => {
-  //   const savedItems = JSON.parse(localStorage.getItem('items'));
-
-  //   savedItems.forEach((item) => {
-  //     console.log('get saved item...');
-  //     return cartCtx.addItem(item);
-  //   });
-  // }, [cartCtx]);
-
-  // useEffect(getSavedItems(), []);
-
   useEffect(() => {
     const savedItems = JSON.parse(localStorage.getItem('cart'));
     if (

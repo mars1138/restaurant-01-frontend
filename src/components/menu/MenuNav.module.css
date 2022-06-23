@@ -10,9 +10,23 @@
 }
 
 .menu-nav li {
-  width: 9%;
   width: auto;
+  cursor: pointer;
   /* margin: 0 3rem; */
+}
+
+.menu-nav li span {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: medium;
+  letter-spacing: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.menu-nav li span:hover,
+.menu-nav li span.active {
+  border-bottom: 2px solid whitesmoke;
 }
 
 .menu-nav a:link,

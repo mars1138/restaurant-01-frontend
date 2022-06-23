@@ -1,20 +1,47 @@
-import React, { Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+// import { Route, Switch } from 'react-router-dom';
 
 import MenuNav from './MenuNav';
-import LoadingSpinner from '../UI/LoadingSpinner';
+// import LoadingSpinner from '../UI/LoadingSpinner';
 import MenuFiltered from './MenuFiltered';
 
 const MenuList = (props) => {
+  const [menu, setMenu] = useState('All');
+
   const pastas = props.menu.filter((dish) => dish.type === 'pasta');
   const pizzas = props.menu.filter((dish) => dish.type === 'pizza');
   const salads = props.menu.filter((dish) => dish.type === 'salad');
   const desserts = props.menu.filter((dish) => dish.type === 'dessert');
 
-  const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
-  const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
-  const saladMenu = <MenuFiltered dishes={salads} type="Salad" />;
-  const dessertMenu = <MenuFiltered dishes={desserts} type="Dessert" />;
+  // const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
+  // const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
+  // const saladMenu = <MenuFiltered dishes={salads} type="Salad" />;
+  // const dessertMenu = <MenuFiltered dishes={desserts} type="Dessert" />;
+
+  let content;
+
+  const menuHandler = (targetMenu) => {
+    setMenu(targetMenu);
+  };
+
+  if (menu === 'All') {
+    content = (
+      <>
+        <MenuFiltered dishes={salads} type="Salad" />
+        <MenuFiltered dishes={pastas} type="Pasta" />
+        <MenuFiltered dishes={pizzas} type="Pizza" />
+        <MenuFiltered dishes={desserts} type="Dessert" />
+      </>
+    );
+  } else {
+    content = (
+      <MenuFiltered
+        dishes={props.menu.filter(
+          (dish) => dish.type === `${menu.toLowerCase()}`
+        )}
+      />
+    );
+  }
 
   return (
     <React.Fragment>
@@ -27,8 +54,9 @@ const MenuList = (props) => {
           necessitatibus fugit.
         </p>
       </div>
-      <MenuNav />
-      <Suspense
+      <MenuNav setMenu={menuHandler} />
+      {content}
+      {/* <Suspense
         fallback={
           <div>
             <LoadingSpinner />
@@ -55,7 +83,7 @@ const MenuList = (props) => {
             <MenuFiltered dishes={salads} type="Salad" />
           </Route>
         </Switch>
-      </Suspense>
+      </Suspense> */}
     </React.Fragment>
   );
 };

@@ -20,7 +20,7 @@ const MenuFiltered = props => {
 
   return (
     <div className={classes['menu-control']}>
-      {/* <h3 className={classes.heading}>{props.type}</h3> */}
+      <h3 className={classes.heading}>{props.type}</h3>
       <ul>{list}</ul>
     </div>
   );
