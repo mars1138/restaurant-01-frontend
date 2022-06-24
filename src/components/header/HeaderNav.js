@@ -6,6 +6,7 @@ import classes from './HeaderNav.module.css';
 import Hero from '../layout/Hero';
 // import SideDrawer from './SideDrawer';
 import Backdrop from '../UI/Backdrop';
+import HeaderNavButton from './HeaderNavButton';
 
 const HeaderNav = (props) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -47,11 +48,7 @@ const HeaderNav = (props) => {
         <div className={classes.headerControl} id="stickyNav">
           <Logo />
           <h2 className={classes.title}>Ristorante San Giorgio</h2>
-          <button className={classes.button} onClick={openDrawerHandler}>
-            <span />
-            <span />
-            <span />
-          </button>
+          <HeaderNavButton openDrawer={openDrawerHandler} />
           <nav className={classes['header__main-nav']}>
             <MainNav onShowCart={props.onShowCart} />
           </nav>
