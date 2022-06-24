@@ -4,13 +4,13 @@ import Card from '../UI/Card';
 import image1 from '../../assets/pexels-hiral-chavda-8545576.jpg';
 import classes from './FeaturedDishes.module.css';
 
-const FeaturedDishes = props => {
-  const ListDishes = dishes => {
-    return dishes.map(dish => (
+const FeaturedDishes = (props) => {
+  const ListDishes = (dishes) => {
+    return dishes.map((dish) => (
       <li key={dish.id}>
         <Card>
           <img
-            src={`http://localhost:3000/img/menu/${dish.imgUrl}`}
+            src={`${process.env.REACT_APP_FRONTEND_URL}/img/menu/${dish.imgUrl}`}
             alt={dish.name}
           />
           <div className={classes.dishInfo}>

@@ -4,8 +4,8 @@ import MenuItem from './MenuItem';
 
 import classes from './MenuFiltered.module.css';
 
-const MenuFiltered = props => {
-  const list = props.dishes.map(dish => {
+const MenuFiltered = (props) => {
+  const list = props.dishes.map((dish) => {
     return (
       <MenuItem
         key={dish.id}
@@ -20,7 +20,10 @@ const MenuFiltered = props => {
 
   return (
     <div className={classes['menu-control']}>
-      <h3 className={classes.heading}>{props.type}</h3>
+      {props.type !== 'All' && (
+        <h3 className={classes.heading}>{props.type}</h3>
+      )}
+
       <ul>{list}</ul>
     </div>
   );

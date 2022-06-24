@@ -30,6 +30,9 @@ function App() {
 
   useEffect(() => {
     const sendRequest = async () => {
+      const randomIndex = (arraySize) => {
+        return Math.floor(Math.random() * (arraySize - 1));
+      };
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/api/menu`
@@ -53,7 +56,11 @@ function App() {
         const pizzas = loadedDishes.filter((dish) => dish.type === 'pizza');
         const desserts = loadedDishes.filter((dish) => dish.type === 'dessert');
 
-        setFeaturedDishes([pastas[0], pizzas[0], desserts[0]]);
+        const cat1 = pastas[randomIndex(pastas.length)];
+        const cat2 = pizzas[randomIndex(pizzas.length)];
+        const cat3 = desserts[randomIndex(desserts.length)];
+
+        setFeaturedDishes([cat1, cat2, cat3]);
       } catch (err) {
         console.log(err);
       }

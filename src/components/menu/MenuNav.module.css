@@ -20,6 +20,7 @@
   text-decoration: none;
   font-size: medium;
   letter-spacing: 2px;
+  line-height: 2.5rem;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
 }

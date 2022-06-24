@@ -7,11 +7,13 @@ import MenuFiltered from './MenuFiltered';
 
 const MenuList = (props) => {
   const [menu, setMenu] = useState('All');
-
-  const pastas = props.menu.filter((dish) => dish.type === 'pasta');
-  const pizzas = props.menu.filter((dish) => dish.type === 'pizza');
-  const salads = props.menu.filter((dish) => dish.type === 'salad');
-  const desserts = props.menu.filter((dish) => dish.type === 'dessert');
+  const menuLinks = [
+    { id: 0, title: 'All' },
+    { id: 1, title: 'Salad' },
+    { id: 2, title: 'Pasta' },
+    { id: 3, title: 'Pizza' },
+    { id: 4, title: 'Dessert' },
+  ];
 
   // const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
   // const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
@@ -27,10 +29,17 @@ const MenuList = (props) => {
   if (menu === 'All') {
     content = (
       <>
-        <MenuFiltered dishes={salads} type="Salad" />
-        <MenuFiltered dishes={pastas} type="Pasta" />
-        <MenuFiltered dishes={pizzas} type="Pizza" />
-        <MenuFiltered dishes={desserts} type="Dessert" />
+        {menuLinks.map((link) => {
+          return (
+            <MenuFiltered
+              key={link.id}
+              dishes={props.menu.filter(
+                (dish) => dish.type === link.title.toLowerCase()
+              )}
+              type={`${link.title}`}
+            />
+          );
+        })}
       </>
     );
   } else {
@@ -54,7 +63,7 @@ const MenuList = (props) => {
           necessitatibus fugit.
         </p>
       </div>
-      <MenuNav setMenu={menuHandler} />
+      <MenuNav setMenu={menuHandler} menuLinks={menuLinks} />
       {content}
       {/* <Suspense
         fallback={
