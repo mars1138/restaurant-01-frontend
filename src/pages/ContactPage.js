@@ -5,6 +5,7 @@ import Contact from '../components/contact/Contact';
 import Gallery from '../components/layout/Gallery';
 
 import CartContext from '../components/store/cart-context';
+import SetRevealSections from '../components/utilities/SetRevealSections';
 
 const ContactPage = () => {
   const [cartReloaded, setCartReloaded] = useState(false);
@@ -29,28 +30,7 @@ const ContactPage = () => {
   }, [setCartReloaded]);
 
   useEffect(() => {
-    const allSections = [...document.getElementsByTagName('section')];
-    console.log(allSections);
-
-    const revealSection = (entries, observer) => {
-      const [entry] = entries;
-      console.log(entry);
-      if (!entry.isIntersecting) return;
-
-      entry.target.classList.remove('hidden');
-      observer.unobserve(entry.target);
-    };
-
-    const sectionObserver = new IntersectionObserver(revealSection, {
-      root: null,
-      threshold: 0.15,
-    });
-
-    allSections.forEach(section => {
-      console.log(section);
-      sectionObserver.observe(section);
-      section.classList.add('hidden');
-    });
+    SetRevealSections();
   }, []);
 
   return (
