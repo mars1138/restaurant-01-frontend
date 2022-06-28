@@ -1,30 +1,20 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Section from '../components/layout/Section';
 import History from '../components/layout/History';
 import FeaturedDishes from '../components/home/FeaturedDishes';
 import Locations from '../components/home/Locations';
 
-import CartContext from '../components/store/cart-context';
+// import CartContext from '../components/store/cart-context';
 import SetRevealSections from '../components/utilities/SetRevealSections';
+import { useCart } from '../components/hooks/useCart';
 
 const HomePage = (props) => {
-  const [cartReloaded, setCartReloaded] = useState(false);
-  const cartCtx = useContext(CartContext);
-
-  const { addItem, items } = cartCtx;
+  const { setCartReloaded, retrieveCart } = useCart();
 
   useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem('cart'));
-    if (
-      !cartReloaded &&
-      items.length === 0 &&
-      savedItems &&
-      savedItems.length > 0
-    ) {
-      savedItems.forEach((item) => addItem(item));
-    }
-  }, [addItem, cartReloaded, items.length]);
+    retrieveCart();
+  }, [retrieveCart]);
 
   useEffect(() => {
     setCartReloaded(true);

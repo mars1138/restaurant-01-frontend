@@ -4,8 +4,6 @@ import image1 from '../../assets/pexels-tirachard-kumtanom-887827 (1).jpg';
 import classes from './FeaturedChef.module.css';
 
 const FeaturedDishes = () => {
-  console.log(image1);
-
   return (
     <div className="flex-wrapper">
       <div className="container-text container-50 flex-column">

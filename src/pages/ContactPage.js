@@ -1,29 +1,20 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect } from 'react';
+// import React, { useEffect, useContext, useState } from 'react';
 
 import Section from '../components/layout/Section';
 import Contact from '../components/contact/Contact';
 import Gallery from '../components/layout/Gallery';
 
-import CartContext from '../components/store/cart-context';
+// import CartContext from '../components/store/cart-context';
 import SetRevealSections from '../components/utilities/SetRevealSections';
+import { useCart } from '../components/hooks/useCart';
 
 const ContactPage = () => {
-  const [cartReloaded, setCartReloaded] = useState(false);
-  const cartCtx = useContext(CartContext);
-
-  const { addItem, items } = cartCtx;
+  const { setCartReloaded, retrieveCart } = useCart();
 
   useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem('cart'));
-    if (
-      !cartReloaded &&
-      items.length === 0 &&
-      savedItems &&
-      savedItems.length > 0
-    ) {
-      savedItems.forEach((item) => addItem(item));
-    }
-  }, [addItem, cartReloaded, items.length]);
+    retrieveCart();
+  }, [retrieveCart]);
 
   useEffect(() => {
     setCartReloaded(true);
