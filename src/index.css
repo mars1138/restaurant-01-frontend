@@ -22,6 +22,8 @@
   --bottom-border-cart-item: rgba(74, 143, 77, 0.274);
 
   --img-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --modal-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   --text-color: rgb(39, 39, 39);
 }

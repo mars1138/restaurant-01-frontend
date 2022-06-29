@@ -42,7 +42,6 @@
   .navList a:link,
   .navList a:active,
   .navList a:visited {
-    /* font-size: smaller; */
   }
 }
 
@@ -61,20 +60,13 @@
     justify-content: center;
     background-color: rgba(32, 32, 32, 0.849);
   }
-  /* 
-  .navList::before {
-    content: '';
-    border-bottom: 2px solid white;
-    width: 60%;
-  } */
+ 
 
   .navList li {
     height: 20%;
     width: 100%;
     margin: 0;
     padding: 1.5rem 0 3rem 6rem;
-    /* border-bottom: 1px solid rgba(32, 32, 32, 0.63); */
-    /* border: 1px solid blue; */
   }
 
   .navList li a {

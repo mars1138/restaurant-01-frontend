@@ -59,7 +59,6 @@
   }
 
   .text h3 {
-    /* font-size: 2rem; */
   }
 }
 
@@ -81,12 +80,9 @@
 
     padding-top: 0;
     padding-bottom: 2rem;
-
-    /* border: 1px solid red; */
   }
 
   .form * {
-    /* height: 6rem; */
     margin-left: 2rem;
     margin-right: 1rem;
   }
@@ -98,12 +94,10 @@
 
   .text {
     padding-bottom: 0;
-    /* border: 1px solid green; */
   }
 
   .text h3 {
     text-align: center;
-    /* font-size: 4rem; */
   }
 
   .text p {

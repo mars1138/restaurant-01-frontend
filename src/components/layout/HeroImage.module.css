@@ -17,17 +17,13 @@
 
 .bgImageContent {
   position: absolute;
-  /* top: -195px; */
   left: 0;
   filter: brightness(0.7);
   height: 100%;
   width: 100%;
-  /* transform: translateY(-4rem); */
   object-fit: cover;
   margin: 0;
   z-index: -2;
-
-  /* border: 1px solid rgb(241, 20, 20); */
 }
 
 .heroHeader {
@@ -42,7 +38,6 @@
 }
 
 .heroHeader h1 {
-  /* background-color: rgba(0, 0, 0, 0.486); */
   font-size: 7rem;
   color: rgb(252, 207, 95);
   text-shadow: 2px 2px 4px #000000;

@@ -3,17 +3,14 @@ import React, { useState, useContext } from 'react';
 import Modal from '../UI/Modal';
 import InfoModal from '../UI/InfoModal';
 import CartItem from './CartItem';
-// import Checkout from './Checkout';
 import CartContext from '../store/cart-context';
 import LoadingSpinner from '../UI/LoadingSpinner';
 
 import classes from './Cart.module.css';
 
 const Cart = (props) => {
-  // const [isCheckout, setIsCheckout] = useState(false);
   const [location, setLocation] = useState('Downtown');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // const [didSubmit, setDidSubmit] = useState(false);
   const [error, setError] = useState();
   const cartCtx = useContext(CartContext);
 
@@ -32,10 +29,6 @@ const Cart = (props) => {
     cartCtx.deleteItem(id);
   };
 
-  // const orderHandler = () => {
-  //   setIsCheckout(true);
-  // };
-
   const clearErrorHandler = () => {
     setError(false);
   };
@@ -45,11 +38,7 @@ const Cart = (props) => {
   };
 
   const orderStripeHandler = async () => {
-    console.log('Location:', location);
-    console.log('order sent to stripe');
     setIsSubmitting(true);
-    // setDidSubmit(false);
-    // setIsCheckout(false);
 
     localStorage.setItem('cart', JSON.stringify(cartCtx.items));
 
@@ -74,55 +63,16 @@ const Cart = (props) => {
 
       const resData = await response.json();
 
-      // console.log('resdata: ', resData);
       props.onClose();
       setIsSubmitting(false);
 
       window.location = resData.url;
-
     } catch (err) {
       console.log(err);
       setIsSubmitting(false);
       setError(true);
     }
   };
-
-  // const submitOrderHandler = async (orderData) => {
-  //   try {
-  //     setIsSubmitting(true);
-  //     const response = await fetch('http://localhost:5000/api/orders', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         name: orderData.name,
-  //         email: orderData.email,
-  //         phone: orderData.phone,
-  //         street: orderData.street,
-  //         city: orderData.city,
-  //         zipCode: orderData.zipCode,
-  //         creditCard: orderData.creditCard,
-  //         items: cartCtx.items,
-  //       }),
-  //     });
-
-  //     const responseData = await response.json();
-
-  //     if (!response.ok) throw new Error(responseData.message);
-
-  //     console.log('response data: ', responseData);
-  //     orderData = responseData;
-
-  //     setIsSubmitting(false);
-  //     setDidSubmit(true);
-  //     // cartCtx.clearCart();
-  //   } catch (err) {
-  //     console.log(err);
-  //     setIsSubmitting(false);
-  //     setError(err.message || 'An unknown error occurred, please try again');
-  //   }
-  // };
 
   const cartItems = (
     <ul className={classes['cart-items']}>
@@ -175,10 +125,6 @@ const Cart = (props) => {
       </div>
       {pickupLocation}
       {modalActions}
-      {/* {isCheckout && (
-        <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
-      )} */}
-      {/* {!isCheckout && modalActions} */}
     </React.Fragment>
   );
 
@@ -190,23 +136,10 @@ const Cart = (props) => {
     </div>
   );
 
-  // const didSubmitModalContent = (
-  //   <React.Fragment>
-  //     <p>Successfully sent the order!</p>
-  //     {orderData}
-  //     <div className={classes.actions}>
-  //       <button className="btn" onClick={props.onClose}>
-  //         Close
-  //       </button>
-  //     </div>
-  //   </React.Fragment>
-  // );
-
   return (
     <Modal onClose={props.onClose}>
       {!error && !isSubmitting && cartModalContent}
       {!error && isSubmitting && isSubmittingModalContent}
-      {/* {!error && !isSubmitting && didSubmit && didSubmitModalContent} */}
       {error && <InfoModal error={error} onClear={clearErrorHandler} />}
     </Modal>
   );

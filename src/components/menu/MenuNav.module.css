@@ -12,7 +12,6 @@
 .menu-nav li {
   width: auto;
   cursor: pointer;
-  /* margin: 0 3rem; */
 }
 
 .menu-nav li span {
@@ -33,7 +32,6 @@
 .menu-nav a:link,
 .menu-nav a:visited,
 .menu-nav a:active {
-  color: rgb(32, 34, 32);
   color: whitesmoke;
   text-decoration: none;
   font-size: medium;
@@ -48,7 +46,6 @@
 @media only screen and (max-width: 715px) {
   .menu-nav {
     width: 100%;
-    /* justify-content: center; */
   }
 
   .menu-nav li {

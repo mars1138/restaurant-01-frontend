@@ -1,6 +1,4 @@
 .logo {
-  /* width: 6rem; */
-  /* border: 1px solid blue; */
 }
 
 .logo img {
@@ -11,6 +9,5 @@
 @media only screen and (max-width: 600px) {
   .logo {
     height: 3rem;
-    /* display: none; */
   }
 }

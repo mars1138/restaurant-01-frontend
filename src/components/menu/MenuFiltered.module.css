@@ -45,12 +45,10 @@
 @media only screen and (max-width: 715px) {
   .menu-control {
     width: 100%;
-    /* border: 1px solid blue; */
   }
 }
 
 @media only screen and (max-width: 550px) {
   .menu-control {
-    /* margin: 10px 0 0 0; */
   }
 }

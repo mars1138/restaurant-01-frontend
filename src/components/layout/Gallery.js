@@ -115,19 +115,8 @@ const successContent = (
       className={classes['success--1']}
       alt="restaurant misc"
     />
-    {/* <img
-      src={contactImg2}
-      className={classes['contact--2']}
-      alt="restaurant misc"
-    /> */}
   </div>
 );
-
-// const successContent = (
-//   <div className={classes['grid-success']}>
-//     <img src={successImg1} className={classes['success--1']} alt="success" />
-//   </div>
-// );
 
 const Gallery = () => {
   return (

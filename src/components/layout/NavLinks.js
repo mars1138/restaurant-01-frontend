@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 import HeaderCartButton from '../header/HeaderCartButton';
-// import classes from './MainNav.module.css';
 
 const NavLinks = (props) => {
   return (

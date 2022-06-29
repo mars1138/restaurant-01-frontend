@@ -4,7 +4,6 @@ import Logo from './Logo';
 import MainNav from '../layout/MainNav';
 import classes from './HeaderNav.module.css';
 import Hero from '../layout/Hero';
-// import SideDrawer from './SideDrawer';
 import Backdrop from '../UI/Backdrop';
 import HeaderNavButton from './HeaderNavButton';
 
@@ -56,14 +55,12 @@ const HeaderNav = (props) => {
         <Hero />
         {drawerOpen && <Backdrop onClick={closeDrawerHandler} />}
         {drawerOpen && (
-          // <SideDrawer show={drawerOpen} onClick={closeDrawerHandler}>
           <nav
             className={classes['header__side-nav']}
             onClick={closeDrawerHandler}
           >
             <MainNav onShowCart={props.onShowCart} />
           </nav>
-          // </SideDrawer>
         )}
       </header>
     </React.Fragment>

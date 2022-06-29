@@ -15,11 +15,6 @@ const MenuList = (props) => {
     { id: 4, title: 'Dessert' },
   ];
 
-  // const pastaMenu = <MenuFiltered dishes={pastas} type="Pasta" />;
-  // const pizzaMenu = <MenuFiltered dishes={pizzas} type="Pizza" />;
-  // const saladMenu = <MenuFiltered dishes={salads} type="Salad" />;
-  // const dessertMenu = <MenuFiltered dishes={desserts} type="Dessert" />;
-
   let content;
 
   const menuHandler = (targetMenu) => {
@@ -65,34 +60,6 @@ const MenuList = (props) => {
       </div>
       <MenuNav setMenu={menuHandler} menuLinks={menuLinks} />
       {content}
-      {/* <Suspense
-        fallback={
-          <div>
-            <LoadingSpinner />
-          </div>
-        }
-      >
-        <Switch>
-          <Route path="/menu" exact>
-            {saladMenu}
-            {pastaMenu}
-            {pizzaMenu}
-            {dessertMenu}
-          </Route>
-          <Route path="/menu/pasta">
-            <MenuFiltered dishes={pastas} type="Pasta" />
-          </Route>
-          <Route path="/menu/pizza">
-            <MenuFiltered dishes={pizzas} type="Pizza" />
-          </Route>
-          <Route path="/menu/dessert">
-            <MenuFiltered dishes={desserts} type="Dessert" />
-          </Route>
-          <Route path="/menu/salads">
-            <MenuFiltered dishes={salads} type="Salad" />
-          </Route>
-        </Switch>
-      </Suspense> */}
     </React.Fragment>
   );
 };

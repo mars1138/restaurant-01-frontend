@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   margin: 0 auto;
-  /* border: 1px solid blue; */
 }
 
 .title {
@@ -41,14 +40,8 @@
 }
 
 @media only screen and (max-width: 715px) {
-  /* .headerControl {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  } */
-
   .title {
     text-align: center;
-    /* font-size: 3rem; */
   }
 
   .button {
@@ -66,18 +59,12 @@
     z-index: 100;
 
     animation: slide-right 300ms ease-out;
-    /* height: 100vh; */
-    /* width: 70%; */
-    /* background: white; */
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
   }
 }
 
 @media only screen and (max-width: 600px) {
   .headerControl {
     height: auto;
-    /* padding: 2rem 2rem; */
-    /* justify-content: center; */
   }
 }
 

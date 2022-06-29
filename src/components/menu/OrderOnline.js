@@ -15,11 +15,9 @@ const FeaturedDishes = () => {
           necessitatibus fugit.
         </p>
       </div>
-      {/* <div className={classes.featured}> */}
         <div className={classes.mainImage}>
           <img src={image1} alt="featured" />
         </div>
-      {/* </div> */}
     </div>
   );
 };

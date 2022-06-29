@@ -11,23 +11,19 @@ const Footer = () => {
           <span>
             <strong>Address:</strong>
           </span>
-          {/* <br /> */}
           <span>1234 Main St.</span>
-          {/* <br /> */}
           <span>Smalltown, WA 98123</span>
         </li>
         <li>
           <span>
             <strong>Phone:</strong>
           </span>
-          {/* <br /> */}
           <span>(555) 555-5555</span>
         </li>
         <li>
           <span>
             <strong>Email:</strong>
           </span>
-          {/* <br /> */}
           <span>hello@sangiorgiorest.com</span>
         </li>
       </ul>

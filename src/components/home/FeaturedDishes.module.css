@@ -57,9 +57,6 @@
 @media only screen and (max-width: 980px) {
   .featured {
     height: 85%;
-    /* width: 100%;
-    margin: 0 auto;
-    padding: 8rem 2rem 10rem 2rem; */
   }
 }
 
@@ -82,7 +79,6 @@
     width: 100%;
     margin: 0;
     flex-direction: column;
-    /* border: 1px solid blue; */
   }
 
   .list {
@@ -95,33 +91,29 @@
     margin-bottom: 1rem;
   }
   .list li img {
-  width: 60%;    
+    width: 60%;
     margin: 2rem auto 1rem auto;
   }
-  
+
   .dishInfo {
     width: 80%;
     margin: 0 auto;
   }
-  
+
   .dishInfo h3 {
     text-align: center;
     font-size: 2rem;
   }
-  
+
   .dishInfo p {
     font-size: 1.5rem;
   }
-  
+
   .mainImage {
     height: 500px;
     width: 100%;
     margin: 2.5rem 0 0 0;
     border-radius: 0px;
     overflow: hidden;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-end; */
-    /* border: 1px solid blue; */
   }
 }

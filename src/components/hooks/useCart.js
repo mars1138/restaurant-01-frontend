@@ -9,7 +9,6 @@ export const useCart = () => {
   let savedItems;
 
   const retrieveCart = () => {
-    // console.log('retrieving cart...');
     savedItems = JSON.parse(localStorage.getItem('cart'));
     if (
       !cartReloaded &&

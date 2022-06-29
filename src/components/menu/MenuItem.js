@@ -5,10 +5,10 @@ import Card from '../UI/Card';
 import MenuItemForm from './MenuItemForm';
 import classes from './MenuItem.module.css';
 
-const MenuItem = props => {
+const MenuItem = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const addToCartHandler = quantity => {
+  const addToCartHandler = (quantity) => {
     console.log('qty: ', quantity);
     console.log('props.id: ', props.id);
     console.log('props.name: ', props.name);
@@ -24,7 +24,7 @@ const MenuItem = props => {
     <li className={classes['list-item']}>
       <Card>
         <img
-          src={`http://localhost:3000/img/menu/${props.url}`}
+          src={`${process.env.REACT_APP_FRONTEND_URL}/img/menu/${props.url}`}
           alt={props.url}
         />
         <div className={classes.text}>

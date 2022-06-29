@@ -6,7 +6,6 @@ const CartItem = (props) => {
 
   return (
     <li className={classes['cart-item']}>
-      {/* <div> */}
       <h3>{props.name}</h3>
       <div className={classes.summary}>
         <span className={classes.price}>{price}</span>
@@ -26,7 +25,6 @@ const CartItem = (props) => {
         <button onClick={props.onRemove}>-</button>
       </div>
       <div className={classes.subtotal}>{subtotal}</div>
-      {/* </div> */}
     </li>
   );
 };
