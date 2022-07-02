@@ -9,7 +9,8 @@ const Success = () => {
         <p>
           We will send you an email confirmation as soon as your order has been
           processed. You will receive a follow up email informing you when your
-          order is ready for pickup.
+          order is ready for pickup at the location and approximate time
+          requested. Thank you for choosing Ristorante San Giorgio!
         </p>
 
         <Link to="/home">

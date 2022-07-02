@@ -5,7 +5,6 @@ import History from '../components/layout/History';
 import FeaturedDishes from '../components/home/FeaturedDishes';
 import Locations from '../components/home/Locations';
 
-// import CartContext from '../components/store/cart-context';
 import SetRevealSections from '../components/utilities/SetRevealSections';
 import { useCart } from '../components/hooks/useCart';
 
@@ -21,7 +20,7 @@ const HomePage = (props) => {
   }, [setCartReloaded]);
 
   useEffect(() => {
-    SetRevealSections();
+    SetRevealSections(0.2);
   }, []);
 
   return (

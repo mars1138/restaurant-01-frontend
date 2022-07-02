@@ -32,13 +32,14 @@ const History = () => {
             small restaurant on the corner of 5th and Main.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-            voluptatum est quam dolores vel, sit accusamus id harum facilis
-            eveniet nulla quis asperiores eius minus inventore, doloribus
-            necessitatibus fugit. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Qui cumque voluptatum est quam dolores vel, sit
-            accusamus id harum facilis eveniet nulla quis asperiores eius minus
-            inventore, doloribus necessitatibus fugit.
+            Their 1st restaurant was a huge success over time, owing to their
+            dedication to serving only the most delicious versions of
+            traditional Italian dishes. Eventually they opened a new location in
+            Downtown, which became a must for tourists visiting the area. In
+            2003, they opened a new restaurant in Suburbia, which is a huge hub
+            for takeout diners. Despite the success, the Manganiello family
+            remains dedicated to providing traditional Italian home cooking
+            surpassed by no one.
           </p>
         </Route>
         <Route path="/home">

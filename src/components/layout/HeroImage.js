@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import image1 from '../../assets/pexels-narda-yescas-1566837.jpg';
-import image2 from '../../assets/pexels-narda-yescas-1566837.jpg';
+import image1 from '../../assets/pexels-narda-yescas-1566837-lg.jpg';
 import image3 from '../../assets/pexels-pixabay-260922crop.jpg';
 import classes from './HeroImage.module.css';
 
@@ -14,7 +13,7 @@ const HeroImage = () => {
           <img src={image1} className={classes.bgImageContent} alt="hero" />
         </Route>
         <Route path="/menu">
-          <img src={image2} className={classes.bgImageContent} alt="hero" />
+          <img src={image1} className={classes.bgImageContent} alt="hero" />
         </Route>
         <Route path="/contact">
           <img src={image3} className={classes.bgImageContent} alt="hero" />

@@ -22,7 +22,7 @@ const MenuPage = (props) => {
   }, [setCartReloaded]);
 
   useEffect(() => {
-    SetRevealSections(0.07);
+    SetRevealSections(0.03);
   }, []);
 
   return (

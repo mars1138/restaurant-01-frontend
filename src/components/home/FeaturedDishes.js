@@ -27,10 +27,7 @@ const FeaturedDishes = (props) => {
       <div className="container-text flex-column">
         <h2>Featured Dishes</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum facilis
-          eveniet nulla quis asperiores eius minus inventore, doloribus
-          necessitatibus fugit.
+          Our establishments feature a wide variety of Italian dishes---some well known, others more eclectic. From pasta to pizzas to desserts, here are a few that deserve special recognition.  Visit one of our locations or order online---we'd be happy to cook for you!
         </p>
       </div>
       <div className={classes.featured}>

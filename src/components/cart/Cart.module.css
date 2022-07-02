@@ -13,6 +13,7 @@
   padding: 0 0 1rem 0;
   max-height: 25rem;
   overflow-y: auto;
+  border-bottom: 1px solid var(--button-main);
 }
 
 .total {
@@ -36,17 +37,18 @@
   font-size: 2rem;
 }
 
-.location {
+.options {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.location label {
-  font-size: 1.25rem;
+.options label {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
-.location select {
-  width: 33%;
+.options select {
+  width: 21%;
+  font-size: 1.25rem;
   border-radius: 2px;
 }

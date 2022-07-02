@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-// import React, { useEffect, useContext, useState } from 'react';
 
 import Section from '../components/layout/Section';
 import Contact from '../components/contact/Contact';
 import Gallery from '../components/layout/Gallery';
 
-// import CartContext from '../components/store/cart-context';
 import SetRevealSections from '../components/utilities/SetRevealSections';
 import { useCart } from '../components/hooks/useCart';
 
@@ -30,10 +28,12 @@ const ContactPage = () => {
         <div className="container-text flex-column">
           <h2>Contact Us</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-            fuga dolores nihil! Consequatur ratione corporis nobis deleniti
-            tempora dolor ex sit. Voluptas mollitia ea ducimus explicabo
-            repellendus incidunt possimus veritatis?
+            We're ready to answer any questions you may have about our
+            restaurant. Our main office is located in downtown just down the
+            street from our restaurant. If you are inquiring about wedding
+            parties, and other celebratory gatherings please indicate in the
+            comments section of the form below. Openings are limited, so please
+            allow for extra time to plan.
           </p>
         </div>
         <Contact />

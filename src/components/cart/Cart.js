@@ -10,8 +10,10 @@ import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const [location, setLocation] = useState('Downtown');
+  const [pickupTime, setPickupTime] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState();
+  const [errorData, setErrorData] = useState();
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -37,6 +39,10 @@ const Cart = (props) => {
     setLocation(event.target.value);
   };
 
+  const setPickupTimeHandler = (event) => {
+    setPickupTime(event.target.value);
+  };
+
   const orderStripeHandler = async () => {
     setIsSubmitting(true);
 
@@ -53,12 +59,16 @@ const Cart = (props) => {
           body: JSON.stringify({
             items: cartCtx.items,
             location: location,
+            pickupTime: pickupTime,
           }),
         }
       );
 
       if (!response.ok) {
-        throw new Error();
+        const resError = await response.json();
+        console.log(resError);
+        setErrorData(resError.message);
+        throw new Error(resError.message);
       }
 
       const resData = await response.json();
@@ -91,13 +101,58 @@ const Cart = (props) => {
   );
 
   const pickupLocation = (
-    <div className={classes.location}>
+    <div className={classes.options}>
       <label htmlFor="location">Choose a pickup location: &nbsp;</label>
 
-      <select name="location" id="location" onChange={setLocationHandler}>
+      <select
+        name="location"
+        id="location"
+        required
+        onChange={setLocationHandler}
+      >
+        <option value=""></option>
         <option value="Downtown">Downtown</option>
         <option value="Suburbia">Suburbia</option>
         <option value="Oldtown">Old Town</option>
+      </select>
+    </div>
+  );
+
+  const getPickupTimes = () => {
+    const currentTime = new Date();
+    const timeArray = [];
+
+    let currentHour = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+
+    const computeTime = (hour, minute) => {
+      return `${hour > 12 ? hour - 12 : hour}:${minute === 0 ? '00' : minute} ${
+        hour > 11 ? 'PM' : 'AM'
+      }`;
+    };
+
+    timeArray.push('');
+    if (30 - currentMinutes > 20) timeArray.push(computeTime(currentHour, 30));
+    if (45 - currentMinutes > 20) timeArray.push(computeTime(currentHour, 45));
+
+    currentHour++;
+
+    for (let i = currentHour; i <= 22; i++) {
+      timeArray.push(computeTime(i, 0));
+      timeArray.push(computeTime(i, 15));
+      timeArray.push(computeTime(i, 30));
+      timeArray.push(computeTime(i, 45));
+    }
+    return timeArray;
+  };
+
+  const pickupTimeOptions = (
+    <div className={classes.options}>
+      <label htmlFor="pickupTime">Choose a pickup time: &nbsp;</label>
+      <select name="pickupTime" id="pickupTime" onChange={setPickupTimeHandler}>
+        {getPickupTimes().map((time) => (
+          <option key={`${time}`} value={`${time}`}>{`${time}`}</option>
+        ))}
       </select>
     </div>
   );
@@ -123,7 +178,8 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{+totalAmount < 0 ? '$ 0.00' : totalAmount}</span>
       </div>
-      {pickupLocation}
+      {hasItems && pickupLocation}
+      {hasItems && pickupTimeOptions}
       {modalActions}
     </React.Fragment>
   );
@@ -140,7 +196,7 @@ const Cart = (props) => {
     <Modal onClose={props.onClose}>
       {!error && !isSubmitting && cartModalContent}
       {!error && isSubmitting && isSubmittingModalContent}
-      {error && <InfoModal error={error} onClear={clearErrorHandler} />}
+      {error && <InfoModal error={errorData} onClear={clearErrorHandler} />}
     </Modal>
   );
 };

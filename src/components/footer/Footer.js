@@ -12,7 +12,7 @@ const Footer = () => {
             <strong>Address:</strong>
           </span>
           <span>1234 Main St.</span>
-          <span>Smalltown, WA 98123</span>
+          <span>Downtown, WA 98123</span>
         </li>
         <li>
           <span>

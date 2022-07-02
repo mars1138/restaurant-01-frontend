@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-// import { Route, Switch } from 'react-router-dom';
 
 import MenuNav from './MenuNav';
-// import LoadingSpinner from '../UI/LoadingSpinner';
 import MenuFiltered from './MenuFiltered';
 
 const MenuList = (props) => {
@@ -52,10 +50,10 @@ const MenuList = (props) => {
       <div className="container-text flex-column">
         <h2>Online Menu</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum facilis
-          eveniet nulla quis asperiores eius minus inventore, doloribus
-          necessitatibus fugit.
+          These items are some of our most popular delicacies. Selection may
+          vary from season to season, but rest assured you will always find
+          something to satisfy your pallete. From pizzas to dessert, you will
+          find that they are second to none!
         </p>
       </div>
       <MenuNav setMenu={menuHandler} menuLinks={menuLinks} />

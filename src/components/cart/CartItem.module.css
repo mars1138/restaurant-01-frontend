@@ -7,6 +7,10 @@
   margin: 1rem 0;
 }
 
+.cart-item:last-of-type {
+  border-bottom: 2px solid transparent;
+}
+
 .cart-item h3 {
   width: 30%;
   font-size: 1.5rem;

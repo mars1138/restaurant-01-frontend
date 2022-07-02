@@ -34,8 +34,8 @@ const homeContent = (
       <div>
         <h3>Downtown</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum.
+          Located on 3rd and Union, this is our most upscale dining experience.
+          See a game at MeadowPark Stadium, then enyjoy the evening with us!
         </p>
       </div>
     </div>
@@ -44,8 +44,9 @@ const homeContent = (
       <div>
         <h3>Suburbia</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum.
+          Our newest location, this is in a convenient spot for many of our
+          suburban customers. Visit the nearby farmers market, then wine and
+          dine indoors or on the patio seating.
         </p>
       </div>
     </div>
@@ -54,8 +55,9 @@ const homeContent = (
       <div>
         <h3>Old Town</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum.
+          Where is all began. This is our most popular location, and is somewhat
+          of a local landmark. Stop by and say hello to Chef Lorenzo, then enjoy
+          a glass of Amarone with your dinner!
         </p>
       </div>
     </div>

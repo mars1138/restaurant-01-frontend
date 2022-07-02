@@ -1,4 +1,3 @@
-// import React, { useState, useContext, useEffect } from 'react';
 import React, { useEffect } from 'react';
 
 import Section from '../components/layout/Section';
@@ -6,33 +5,16 @@ import Gallery from '../components/layout/Gallery';
 import History from '../components/layout/History';
 import FeaturedChef from '../components/about/FeaturedChef';
 
-// import CartContext from '../components/store/cart-context';
 import SetRevealSections from '../components/utilities/SetRevealSections';
-import {useCart} from '../components/hooks/useCart';
+import { useCart } from '../components/hooks/useCart';
+import Receptions from '../components/about/Receptions';
 
 const About = (props) => {
-  // const [cartReloaded, setCartReloaded] = useState(false);
-  // const cartCtx = useContext(CartContext);
-
-  // const { addItem, items } = cartCtx;
-
   const { setCartReloaded, retrieveCart } = useCart();
 
-  useEffect(()=> {
+  useEffect(() => {
     retrieveCart();
-  },[retrieveCart])
-
-  // useEffect(() => {
-  //   const savedItems = JSON.parse(localStorage.getItem('cart'));
-  //   if (
-  //     !cartReloaded &&
-  //     items.length === 0 &&
-  //     savedItems &&
-  //     savedItems.length > 0
-  //   ) {
-  //     savedItems.forEach((item) => addItem(item));
-  //   }
-  // }, [addItem, cartReloaded, items.length]);
+  }, [retrieveCart]);
 
   useEffect(() => {
     setCartReloaded(true);
@@ -53,6 +35,10 @@ const About = (props) => {
       </Section>
 
       <Section>
+        <Receptions />
+      </Section>
+
+      <Section sectionClass="bg-awhite">
         <Gallery />
       </Section>
     </React.Fragment>

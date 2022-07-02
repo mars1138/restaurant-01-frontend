@@ -9,15 +9,20 @@ const FeaturedDishes = () => {
       <div className="container-text container-50 flex-column">
         <h2>Order Online</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque
-          voluptatum est quam dolores vel, sit accusamus id harum facilis
-          eveniet nulla quis asperiores eius minus inventore, doloribus
-          necessitatibus fugit.
+          While we promote the dine-in experience above all, we have a limited
+          number of dishes you can order for take out. These are all available
+          at every one of our locations.
+        </p>
+        <p>
+          Our dine-in locations offer an extended menu, with each location
+          having an even greater selection of dishes that varies depending on
+          the season and locale. We encourage you to try both, and tell your
+          friends and family!
         </p>
       </div>
-        <div className={classes.mainImage}>
-          <img src={image1} alt="featured" />
-        </div>
+      <div className={classes.mainImage}>
+        <img src={image1} alt="featured" />
+      </div>
     </div>
   );
 };

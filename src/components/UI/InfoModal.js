@@ -10,7 +10,7 @@ const InfoModal = (props) => {
         {props.error ? 'An Error Occurred!' : `${props.msgHeader}`}
       </h2>
       <p className={classes.info}>
-        {props.error ? props.error : props.message}
+        {props.error ? props.error : 'Problem sending data...'}
       </p>
       {props.children}
       <button className="btn-error" onClick={props.onClear}>

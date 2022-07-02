@@ -19,7 +19,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 2px;
 }
@@ -181,6 +181,10 @@
   .grid-contact {
     display: flex;
     padding: 0;
+  }
+
+  .grid-success {
+    margin: 3.5rem auto;
   }
 
   .contact--1 {
