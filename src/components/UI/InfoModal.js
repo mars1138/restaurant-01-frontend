@@ -7,7 +7,8 @@ const InfoModal = (props) => {
   return (
     <Modal onClose={props.onClear}>
       <h2 className={classes['info-header']}>
-        {props.error ? 'An Error Occurred!' : `${props.msgHeader}`}
+        {/* {props.error ? 'An Error Occurred!' : `${props.msgHeader}`} */}
+        An Error Occurred!
       </h2>
       <p className={classes.info}>
         {props.error ? props.error : 'Problem sending data...'}
