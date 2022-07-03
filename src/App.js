@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/HomePage';
@@ -7,7 +7,6 @@ import MenuPage from './pages/MenuPage';
 import Contact from './pages/ContactPage';
 import SuccessPage from './pages/SuccessPage';
 
-import LoadingSpinner from './components/UI/LoadingSpinner';
 import HeaderNav from './components/header/HeaderNav';
 import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
@@ -33,6 +32,7 @@ function App() {
       const randomIndex = (arraySize) => {
         return Math.floor(Math.random() * (arraySize - 1));
       };
+
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/api/menu`
@@ -74,36 +74,28 @@ function App() {
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <HeaderNav onShowCart={showCartHandler} />
       <main className="main">
-        <Suspense
-          fallback={
-            <div>
-              <LoadingSpinner />
-            </div>
-          }
-        >
-          <ScrollToTop>
-            <Switch>
-              <Route path="/" exact>
-                <Redirect to="/home" />
-              </Route>
-              <Route path="/home">
-                <Home featured={featuredDishes} />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/menu">
-                <MenuPage menu={dishes} />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/success">
-                <SuccessPage />
-              </Route>
-            </Switch>
-          </ScrollToTop>
-        </Suspense>
+        <ScrollToTop>
+          <Switch>
+            <Route path="/" exact>
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home">
+              <Home featured={featuredDishes} />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/menu">
+              <MenuPage menu={dishes} />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/success">
+              <SuccessPage />
+            </Route>
+          </Switch>
+        </ScrollToTop>
       </main>
       <Footer />
     </CartProvider>
