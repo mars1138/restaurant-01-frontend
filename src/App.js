@@ -41,6 +41,8 @@ function App() {
         const data = await response.json();
 
         if (!response.ok) {
+          console.log('response: ', response);
+          console.log('data: ', data);
           throw new Error(data.message);
         }
 
