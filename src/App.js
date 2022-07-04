@@ -41,8 +41,6 @@ function App() {
         const data = await response.json();
 
         if (!response.ok) {
-          console.log('response: ', response);
-          console.log('data: ', data);
           throw new Error(data.message);
         }
 
@@ -64,6 +62,8 @@ function App() {
 
         setFeaturedDishes([cat1, cat2, cat3]);
       } catch (err) {
+        console.log('response: ', response);
+        console.log('data: ', data);
         console.log(err);
       }
     };
