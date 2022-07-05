@@ -62,8 +62,6 @@ function App() {
 
         setFeaturedDishes([cat1, cat2, cat3]);
       } catch (err) {
-        console.log('response: ', response);
-        console.log('data: ', data);
         console.log(err);
       }
     };
