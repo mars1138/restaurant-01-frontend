@@ -76,7 +76,6 @@ const ContactForm = () => {
       );
 
       const responseData = await response.json();
-      console.log(responseData);
 
       if (!response.ok) {
         throw new Error(responseData.message);
@@ -89,7 +88,6 @@ const ContactForm = () => {
       resetPhone();
       resetComments();
     } catch (err) {
-      console.log(err);
       setIsSubmitting(false);
       setError(err.message || 'An unknown error occurred, please try again');
     }
@@ -125,7 +123,7 @@ const ContactForm = () => {
 
   return (
     <React.Fragment>
-      {error && <InfoModal error={error} onClear={errorHandler} />}
+      {error && <InfoModal message={error} onClear={errorHandler} />}
       {didSubmit && (
         <InfoModal
           message={submitMessage}
