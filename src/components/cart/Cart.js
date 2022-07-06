@@ -100,6 +100,16 @@ const Cart = (props) => {
     </ul>
   );
 
+  const cartIsEmpty = (
+    <div className={classes.empty}>
+      {cartCtx.items.length === 0 && (
+        <div>
+          <p>Cart is Empty</p>
+        </div>
+      )}
+    </div>
+  );
+
   const pickupLocation = (
     <div className={classes.options}>
       <label htmlFor="location">Choose a pickup location: &nbsp;</label>
@@ -173,7 +183,8 @@ const Cart = (props) => {
   const cartModalContent = (
     <React.Fragment>
       <h2 className={classes.title}>Your Cart</h2>
-      {cartItems}
+      {cartCtx.items.length > 0 && cartItems}
+      {cartCtx.items.length === 0 && cartIsEmpty}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{+totalAmount < 0 ? '$ 0.00' : totalAmount}</span>
