@@ -10,6 +10,7 @@ import SuccessPage from './pages/SuccessPage';
 import HeaderNav from './components/header/HeaderNav';
 import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
+import Notification from './components/UI/Notification';
 import CartProvider from './components/store/CartProvider';
 import ScrollToTop from './components/utilities/ScrollToTop';
 
@@ -19,12 +20,19 @@ function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [dishes, setDishes] = useState([]);
   const [featuredDishes, setFeaturedDishes] = useState([]);
+  const [showNotification, setShowNotification] = useState(true);
+  const notifyBackend =
+    'Backend services may take a minute to startup and load Featured Items & Menu---your patience is appreciated!';
 
   const showCartHandler = () => {
     setCartIsShown(true);
   };
   const hideCartHandler = () => {
     setCartIsShown(false);
+  };
+
+  const notificationHandler = () => {
+    setShowNotification(false);
   };
 
   useEffect(() => {
@@ -72,6 +80,9 @@ function App() {
   return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
+      {showNotification && (
+        <Notification onClear={notificationHandler} message={notifyBackend} />
+      )}
       <HeaderNav onShowCart={showCartHandler} />
       <main className="main">
         <ScrollToTop>
